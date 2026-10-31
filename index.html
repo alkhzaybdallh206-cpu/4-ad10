@@ -436,5 +436,63 @@ mark();
  document.querySelectorAll('[data-r]').forEach(function(x){x.classList.add('in')});
 }
 </script>
+ <script>
+(function(){
+try{
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var st=document.createElement('style');
+st.textContent='.tabbar{grid-template-columns:repeat(7,1fr)!important}'
++'#soon.active{animation:mfi .7s both}@keyframes mfi{from{opacity:0;transform:translateY(24px)}}'
++'.sooncard{position:relative;border:1px solid #262628;background:linear-gradient(180deg,#0d0d0e,#070707);padding:60px 26px;text-align:center;margin-top:10px}'
++'.sooncard::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,#c1272d,transparent)}'
++'.sooncard h3{font-size:clamp(1.6rem,6vw,2.6rem);font-weight:700;margin:16px 0 10px}'
++'.sooncard p{color:#8b8683;margin-bottom:28px}'
++'.sooncard svg{width:90px;opacity:.9;filter:drop-shadow(0 0 24px rgba(155,20,27,.5))}';
+document.head.appendChild(st);
+
+var sec=document.createElement('section');
+sec.className='page';sec.id='soon';
+sec.innerHTML='<div class="wrap"><header class="sh"><p class="eye lb2">07 — SOON</p><h2 class="st">COMING SOON</h2><span class="rule"></span></header>'
++'<div class="sooncard"><svg viewBox="0 0 100 100"><use href="#crown"/></svg><h3>يتوفر عن قريب</h3><p>أشتغل على شي جديد... ترقبوه.</p>'
++'<button class="btn solid lb2" data-go="home"><span>الرئيسية</span><i>→</i></button></div></div>';
+$('#socials').insertAdjacentElement('afterend',sec);
+
+var links=$('.links');
+if(links){var a1=document.createElement('a');a1.href='#soon';a1.setAttribute('data-p7','');a1.innerHTML='<b>07</b>SOON';links.appendChild(a1)}
+var tb=$('.tabbar');
+if(tb){var a2=document.createElement('a');a2.href='#soon';a2.setAttribute('data-p7','');a2.innerHTML='<b>07</b>SOON';tb.appendChild(a2)}
+var cg=$('.cg');
+if(cg){var a3=document.createElement('a');a3.className='ch';a3.href='#soon';a3.setAttribute('data-p7','');a3.innerHTML='<b>07</b><h3>SOON</h3><p>قريباً</p><i>→</i>';cg.appendChild(a3)}
+
+var prev='home';
+function marks(fn){$$('.links a,.tabbar a').forEach(function(a){a.classList.toggle('on',fn(a))})}
+document.addEventListener('click',function(e){
+var t=e.target.closest('[data-p7]');
+if(t){
+e.preventDefault();
+var act=$('.page.active');
+if(act&&act.id!=='soon')prev=act.id;
+$$('.page.active').forEach(function(x){x.classList.remove('active')});
+sec.classList.add('active');
+window.scrollTo(0,0);
+document.title='4_AD10 — SOON';
+marks(function(a){return a.hasAttribute('data-p7')});
+return;
+}
+var g=e.target.closest('[data-go]');
+if(g&&sec.classList.contains('active')&&g.dataset.go===prev){
+e.preventDefault();
+sec.classList.remove('active');
+var p=document.getElementById(prev);
+p.classList.add('active');
+window.scrollTo(0,0);
+$$('[data-r]',p).forEach(function(x){x.classList.add('in')});
+marks(function(a){return a.dataset.go===prev});
+}
+});
+}catch(err){console.error('page7:',err)}
+})();
+ </script>
 </body>
 </html>
