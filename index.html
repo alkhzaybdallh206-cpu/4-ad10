@@ -25,7 +25,6 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;backgroun
 #cv{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 .vig{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(120% 90% at 50% 50%,transparent 50%,rgba(0,0,0,.75))}
 #flash{position:fixed;inset:0;z-index:900;pointer-events:none;opacity:0;background:radial-gradient(circle,rgba(255,59,71,.55),rgba(109,10,18,.7) 60%,#030303)}
-/* enter */
 #loader{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:rgba(3,3,3,.55);transition:opacity .9s var(--out),transform 1.2s var(--out)}
 #loader.out{opacity:0;transform:scale(1.25);pointer-events:none}
 .ldc{text-align:center;width:min(94vw,580px);padding:30px 10px}
@@ -40,7 +39,6 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;backgroun
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 40px;min-height:50px;border:1px solid var(--sv);background:linear-gradient(180deg,var(--rd),var(--dk));font:700 1.15rem var(--rk);letter-spacing:.04em;transition:box-shadow .3s,transform .2s}
 .btn:hover{box-shadow:0 0 30px rgba(255,59,71,.55)}.btn:active{transform:scale(.97)}
 #enter{margin-top:6px;animation:fi 1.4s var(--out) .9s both}
-/* nav */
 .top{position:fixed;inset:0 0 auto;z-index:600;display:flex;align-items:center;justify-content:space-between;padding:calc(10px + env(safe-area-inset-top)) max(18px,4vw) 10px;background:linear-gradient(rgba(3,3,3,.92),transparent);direction:ltr}
 .logo{font:800 1.05rem Cinzel,serif;letter-spacing:.16em;color:var(--sv)}.logo b{color:var(--rd2);font-weight:400;margin-right:6px}
 .sbtn{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--ln);color:var(--sv);transition:.3s}.sbtn:hover{border-color:var(--rd2)}.sbtn.off{color:var(--mut)}
@@ -52,8 +50,8 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;backgroun
 .tabs a::after{content:"";position:absolute;inset:auto 14px 0;height:2px;background:var(--rd2);box-shadow:0 0 10px var(--rd2);transform:scaleX(0);transition:transform .5s var(--out)}.tabs a.on::after{transform:scaleX(1)}
 @media(min-width:821px){.tabs{top:10px;left:50%;transform:translateX(-50%)}.tabs a{padding:10px 20px}}
 @media(max-width:820px){.tabs{inset:auto 0 0;gap:0;background:rgba(3,3,3,.95);backdrop-filter:blur(14px);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom)}
-.tabs a{flex:1;flex-direction:column;gap:0;padding:9px 0 8px;font-size:.9rem}.tabs a::after{inset:-1px 25% auto;height:2px}}
-/* pages */
+.tabs a{flex:1;flex-direction:column;gap:0;padding:9px 0 8px;font-size:.9rem}.tabs a::after{inset:-1px 25% auto;height:2px}
+.foot{padding-bottom:calc(90px + env(safe-area-inset-bottom))}}
 #stage{position:relative;z-index:3}
 .page{display:none;min-height:100svh;padding:100px 0 130px}.page.on{display:block}
 .wrap{width:min(1040px,calc(100% - 40px));margin-inline:auto}
@@ -102,7 +100,7 @@ h2.t{display:inline-block;font:700 clamp(2.4rem,10vw,4.4rem)/1.5 var(--ar);backg
 <div class="neb" aria-hidden="true"><i></i><i></i><i></i></div><canvas id="cv" aria-hidden="true"></canvas><div class="vig"></div><div id="flash"></div>
 
 <div id="loader"><div class="ldc"><div class="frame">
- <p class="nm lt">♚ 𝒜 𝐵 𝒟 𝒰 𝐿 𝐿 𝒜 𝐻 ♚</p><p class="hd lt">4_ad10</p>
+ <p class="nm lt">♚ 𝒜 ℬ 𝒟 𝒰 ℒ ℒ 𝒜 ℋ ♚</p><p class="hd lt">4_ad10</p>
  <div class="dv" aria-hidden="true">❖</div>
  <button class="btn" id="enter">دخول الموقع</button>
 </div></div></div>
@@ -113,7 +111,7 @@ h2.t{display:inline-block;font:700 clamp(2.4rem,10vw,4.4rem)/1.5 var(--ar);backg
 
 <main id="stage">
 <section class="page on" id="me"><div class="wrap">
- <div class="hero rv"><p class="nm lt">♚ 𝒜 𝐵 𝒟 𝒰 𝐿 𝐿 𝒜 𝐻 ♚</p><h1 class="big lt">4_AD10</h1><div class="dv" aria-hidden="true">❖</div>
+ <div class="hero rv"><p class="nm lt">♚ 𝒜 ℬ 𝒟 𝒰 ℒ ℒ 𝒜 ℋ ♚</p><h1 class="big lt">4_AD10</h1><div class="dv" aria-hidden="true">❖</div>
   <p class="b">أنا عبدالله، صانع محتوى ومونتير أنمي. أصنع مشاهد بإيقاع سينمائي، وأبحر بها في عمق الفضاء.</p></div>
  <p class="eye rv" style="--i:1">❖ تواصل معي</p><h2 class="t wr">حساباتي</h2>
  <div class="sg" id="sg"></div></div></section>
@@ -121,37 +119,38 @@ h2.t{display:inline-block;font:700 clamp(2.4rem,10vw,4.4rem)/1.5 var(--ar);backg
 <section class="page" id="quotes"><div class="wrap">
  <p class="eye rv">❖ الاقتباسات</p><h2 class="t wr">مقولات الأنمي</h2>
  <p class="sub rv" style="--i:2">اضغط «نسخ» لنسخ نص المقولة فقط.</p>
- <div class="qg" id="qg"></div></div></section>
+ <div class="qg" id="qg"><div class="empty rv">قريباً تُضاف مقولات الأنمي هنا ❖</div></div></div></section>
 
 <section class="page" id="friends"><div class="wrap">
  <p class="eye rv">❖ الشلّة</p><h2 class="t wr">حسابات أصدقائي</h2>
  <p class="sub rv" style="--i:2">أصدقائي ومبدعون أنصحكم بمتابعتهم.</p>
- <div class="fg" id="fg"></div></div></section>
+ <div class="fg" id="fg"><div class="empty rv">قريباً تُضاف حسابات الأصدقاء هنا ❖</div></div></div></section>
 
-<footer class="wrap foot"><div class="dv" aria-hidden="true">❖</div><p class="nm lt">♚ 𝒜 𝐵 𝒟 𝒰 𝐿 𝐿 𝒜 𝐻 ♚</p>
+<footer class="wrap foot"><div class="dv" aria-hidden="true">❖</div><p class="nm lt">♚ 𝒜 ℬ 𝒟 𝒰 ℒ ℒ 𝒜 ℋ ♚</p>
  <p>© <span id="yr"></span> <span class="lt">4_AD10</span> — جميع الحقوق محفوظة.</p>
  <p>التصاميم والمونتاجات ملك لصاحب الموقع، ولا يجوز إعادة نشرها بدون إذن. المقولات لأصحابها الأصليين.</p></footer>
 </main>
 <div id="toast" role="status" aria-live="polite"></div>
 
+<!-- ===== السكربت الأساسي (لا تلمسه إلا للضرورة) ===== -->
 <script>
 (function(){
 var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
 var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
 var sleep=function(ms){return new Promise(function(r){setTimeout(r,ms)})};
 
-/* ✎ الإعدادات — عدّل هنا */
+/* ✎ الإعدادات */
 var CFG={
  me:[
   {name:'TikTok',url:'https://www.tiktok.com/@4_ad10',tag:'صانع محتوى',b:'مقاطع قصيرة ومونتاج أنمي بإيقاع سريع.',svg:'<path d="M16 3c.3 2.4 1.8 4 4 4.2v3a7 7 0 0 1-4-1.3v6.4a5.3 5.3 0 1 1-5.3-5.3c.3 0 .6 0 .9.1v3.1a2.3 2.3 0 1 0 1.4 2.1V3z" fill="currentColor"/>'},
   {name:'Instagram',url:'https://www.instagram.com/4_ad10',tag:'حساب شخصي',b:'حسابي الشخصي.',svg:'<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>'},
   {name:'YouTube',url:'https://youtube.com/@4_ad10',tag:'صانع محتوى',b:'الأعمال الكاملة بجودة عالية.',svg:'<rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 9.2v5.6l5-2.8z" fill="currentColor"/>'}],
- /* أضف مقولة بسطر: {q:'النص',c:'الشخصية',a:'الأنمي'} */
+ /* مقولة: {q:'النص',c:'الشخصية',a:'الأنمي'} */
  quotes:[],
- /* أضف صديق بسطر: {name:'الاسم',handle:'@المعرف',platform:'TikTok',url:'https://...'} */
+ /* صديق: {name:'الاسم',handle:'@المعرف',platform:'TikTok',url:'https://...'} */
  friends:[]};
 
-/* الصوت: يشتغل بعد ضغطك على «دخول الموقع» وتكتمه من الزر أعلى الصفحة */
+/* الصوت */
 var S={c:null,m:null,nb:null,on:0,
  init:function(){if(this.c)return;var C=window.AudioContext||window.webkitAudioContext;if(!C)return;var c=this.c=new C();this.m=c.createGain();this.m.gain.value=.65;this.m.connect(c.destination);var n=c.sampleRate;this.nb=c.createBuffer(1,n,n);var d=this.nb.getChannelData(0);for(var i=0;i<n;i++)d[i]=Math.random()*2-1},
  tone:function(f,ty,d,v,to,dl){if(!this.on||!this.c)return;var c=this.c,t=c.currentTime+(dl||0),o=c.createOscillator(),g=c.createGain();o.type=ty;o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(to,t+d);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(this.m);o.start(t);o.stop(t+d+.05)},
@@ -162,10 +161,10 @@ var S={c:null,m:null,nb:null,on:0,
  boom:function(){this.tone(60,'sine',2.4,.7,22);this.tone(120,'triangle',1.8,.16,44);this.noise(2,150,3600,.3);this.tone(440,'sine',3,.04,220)},
  set:function(on){this.on=on;if(on){this.init();this.c&&this.c.resume()}$('#sb').classList.toggle('off',!on)}};
 $('#sb').onclick=function(){S.set(S.on?0:1);if(S.on)S.tap()};
-document.addEventListener('click',function(e){if(e.target.closest('a,button')&&!e.target.closest('#sb,#enter'))S.tap()});
+document.addEventListener('click',function(e){if(e.target.closest('a,button')&&!e.target.closest('#sb,#enter,[data-go]'))S.tap()});
 document.addEventListener('visibilitychange',function(){if(S.c){document.hidden?S.c.suspend():S.on&&S.c.resume()}});
 
-/* الفضاء: نجوم تتحرك باتجاهك، وقفزة سرعة ضوئية عند الانتقال */
+/* الفضاء */
 var cv=$('#cv'),cx=cv.getContext('2d'),W,H,spd=.6,tgt=.6,ST=[],SH=null;
 function rst(s,far){s.x=Math.random()*2-1;s.y=Math.random()*2-1;s.z=far?Math.random()*.9+.1:1;s.pz=s.z;s.r=Math.random()<.2}
 function rz(){W=cv.width=innerWidth;H=cv.height=innerHeight}rz();addEventListener('resize',rz);
@@ -181,10 +180,10 @@ function frame(){
  if(!RM)requestAnimationFrame(frame)}
 if(RM){tgt=spd=0}frame();
 
-/* الصفحات والتنقل */
+/* الصفحات والتنقل (أضف صفحة جديدة: PG + قسم HTML بنفس الـ id) */
 var PG=[{id:'me',t:'حساباتي'},{id:'quotes',t:'المقولات'},{id:'friends',t:'الأصدقاء'}];
-var ids=PG.map(function(p){return p.id}),cur='me',ix=0,busy=0,AR=['٠١','٠٢','٠٣'];
-$('#tabs').innerHTML=PG.map(function(p,i){return'<a href="#'+p.id+'" data-go="'+p.id+'"><b>'+AR[i]+'</b><span>'+p.t+'</span></a>'}).join('');
+var ids=PG.map(function(p){return p.id}),cur='me',ix=0,busy=0,AR=['٠١','٠٢','٠٣','٠٤','٠٥','٠٦'];
+function tabs(){$('#tabs').innerHTML=PG.map(function(p,i){return'<a href="#'+p.id+'" data-go="'+p.id+'"><b>'+AR[i]+'</b><span>'+p.t+'</span></a>'}).join('');mark()}
 function mark(){$$('#tabs a').forEach(function(a){a.classList.toggle('on',a.dataset.go===cur)})}
 async function go(p,pop){
  var ni=ids.indexOf(p);if(ni<0||busy||p===cur)return;busy=1;S.warp();
@@ -197,38 +196,77 @@ async function go(p,pop){
    fl.animate([{opacity:0},{opacity:.7,offset:.35},{opacity:0}],{duration:900,easing:'ease-out'});
    swap();
    nw.animate([{opacity:0,transform:'scale(.9)',filter:'blur(12px)'},{opacity:1,transform:'none',filter:'blur(0)'}],{duration:850,easing:'cubic-bezier(.16,1,.3,1)'});
-   await sleep(260);tgt=.6;
+   await sleep(260);
   }
- }catch(e){swap()}
+ }catch(e){if(cur!==p)swap()}
  tgt=.6;busy=0}
+tabs();
 document.addEventListener('click',function(e){var t=e.target.closest('[data-go]');if(t){e.preventDefault();go(t.dataset.go)}});
-addEventListener('popstate',function(){go(location.hash.slice(1)||'me',1)});
+addEventListener('popstate',function(){var p=location.hash.slice(1)||'me';if(busy)setTimeout(function(){go(p,1)},800);else go(p,1)});
 var sx=0,sy=0;
 document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
 document.addEventListener('touchend',function(e){if($('#loader'))return;var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>90&&Math.abs(dx)>Math.abs(dy)*1.8){var n=ix+(dx<0?1:-1);if(ids[n])go(ids[n])}},{passive:true});
 
 /* المحتوى */
 var tt;function toast(m,err){var t=$('#toast');t.textContent=m;t.className='show'+(err?' err':'');clearTimeout(tt);tt=setTimeout(function(){t.className=''},2200)}
-function copy(x){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(x);return new Promise(function(res,rej){var a=document.createElement('textarea');a.value=x;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}a.remove();ok?res():rej()})}
-CFG.me.forEach(function(s,i){var a=document.createElement('a');a.className='soc rv';a.style.setProperty('--i',i+3);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';
- a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+s.svg+'</svg><h3>'+s.name+'</h3><div class="id">@4_ad10</div><p>'+s.b+'</p><div class="go"><span>'+s.tag+'</span><span>↗</span></div>';$('#sg').append(a)});
-CFG.quotes.forEach(function(q,i){var c=document.createElement('article');c.className='qc rv';c.style.setProperty('--i',i+3);
- var b=document.createElement('blockquote');b.textContent=q.q;var m=document.createElement('div');m.className='qm';var d=document.createElement('div'),n=document.createElement('b'),s=document.createElement('small');n.textContent=q.c;s.textContent=q.a;d.append(n,s);
+function copy(x){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(x);return new Promise(function(res,rej){var a=document.createElement('textarea');a.value=x;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();a.setSelectionRange(0,99999);var ok=false;try{ok=document.execCommand('copy')}catch(e){}a.remove();ok?res():rej()})}
+function clr(box){var e=$('.empty',box);e&&e.remove()}
+var n={s:0,q:0,f:0};
+function addSocial(s){var a=document.createElement('a');a.className='soc rv';a.style.setProperty('--i',n.s++ +3);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';
+ a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+(s.svg||'')+'</svg><h3>'+s.name+'</h3><div class="id">'+(s.id||'@4_ad10')+'</div><p>'+(s.b||'')+'</p><div class="go"><span>'+(s.tag||'')+'</span><span>↗</span></div>';$('#sg').append(a)}
+function addQuote(q){var box=$('#qg');clr(box);var c=document.createElement('article');c.className='qc rv';c.style.setProperty('--i',n.q++ +3);
+ var b=document.createElement('blockquote');b.textContent=q.q;var m=document.createElement('div');m.className='qm';var d=document.createElement('div'),nn=document.createElement('b'),s=document.createElement('small');nn.textContent=q.c||'';s.textContent=q.a||'';d.append(nn,s);
  var bt=document.createElement('button');bt.className='cp';bt.textContent='نسخ';
  bt.onclick=function(){copy(q.q).then(function(){S.copy();toast('تم نسخ المقولة ✓');bt.classList.add('ok');bt.textContent='تم ✓';setTimeout(function(){bt.classList.remove('ok');bt.textContent='نسخ'},1600)}).catch(function(){toast('تعذّر النسخ، حاول مرة أخرى',1)})};
- m.append(d,bt);c.append(b,m);$('#qg').append(c)});
-if(!CFG.quotes.length)$('#qg').innerHTML='<div class="empty rv" style="grid-column:1/-1">قريباً تُضاف مقولات الأنمي هنا ❖</div>';
-if(!CFG.friends.length)$('#fg').innerHTML='<div class="empty rv">قريباً تُضاف حسابات الأصدقاء هنا ❖</div>';
-CFG.friends.forEach(function(f,i){var a=document.createElement('a');a.className='fr rv';a.style.setProperty('--i',i+3);a.href=f.url;a.target='_blank';a.rel='noopener noreferrer';
- var av=document.createElement('div');av.className='av';av.textContent=(f.name||'؟').trim().charAt(0);var d=document.createElement('div'),n=document.createElement('b'),h=document.createElement('small'),p=document.createElement('em');n.textContent=f.name;h.textContent=f.handle||'';p.textContent=f.platform||'';d.append(n,h,p);
- var ar=document.createElement('span');ar.className='ar2';ar.textContent='↗';a.append(av,d,ar);$('#fg').append(a)});
+ m.append(d,bt);c.append(b,m);box.append(c)}
+function addFriend(f){var box=$('#fg');clr(box);var a=document.createElement('a');a.className='fr rv';a.style.setProperty('--i',n.f++ +3);a.href=f.url;a.target='_blank';a.rel='noopener noreferrer';
+ var av=document.createElement('div');av.className='av';av.textContent=(f.name||'؟').trim().charAt(0);var d=document.createElement('div'),nn=document.createElement('b'),h=document.createElement('small'),p=document.createElement('em');nn.textContent=f.name;h.textContent=f.handle||'';p.textContent=f.platform||'';d.append(nn,h,p);
+ var ar=document.createElement('span');ar.className='ar2';ar.textContent='↗';a.append(av,d,ar);box.append(a)}
+function css(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s)}
+function addPage(id,title,html){PG.push({id:id,t:title});var s=document.createElement('section');s.className='page';s.id=id;s.innerHTML='<div class="wrap">'+html+'</div>';$('#stage').insertBefore(s,$('.foot'));ids.push(id);tabs();return s}
+CFG.me.forEach(addSocial);CFG.quotes.forEach(addQuote);CFG.friends.forEach(addFriend);
 $('#yr').textContent=new Date().getFullYear();
 
-/* الدخول: قفزة نحو الفضاء */
+/* الدخول */
 var entered=0;
 $('#enter').onclick=async function(){if(entered)return;entered=1;S.set(1);S.boom();tgt=60;var l=$('#loader');l.classList.add('out');await sleep(RM?50:1100);l.remove();document.body.classList.remove('lock');tgt=.6;
  var h=location.hash.slice(1);if(ids.indexOf(h)>0)go(h,1);else mark()};
 mark();
+
+/* جسر للتحديثات: كل ما تحتاجه متاح داخل SITE */
+window.SITE={CFG:CFG,$:$,$$:$$,S:S,go:go,toast:toast,copy:copy,sleep:sleep,css:css,addSocial:addSocial,addQuote:addQuote,addFriend:addFriend,addPage:addPage};
+})();
+</script>
+
+<!-- ===== ✎ منطقة التحديثات: أضف أفكارك هنا فقط ===== -->
+<!-- سكربت منفصل: أي خطأ فيه ما يخرب الموقع -->
+<script>
+(function(){
+ if(!window.SITE)return;
+ /* كل تحديث داخل add: لو فيه خطأ يتجاهل نفسه فقط */
+ function add(name,fn){try{fn(SITE)}catch(e){console.warn('تحديث تعطّل: '+name,e)}}
+
+ /* ── أمثلة: انسخ المثال لتحت السطر الأخير واحذف ما لا تريده ──
+ add('مقولة جديدة',function(A){
+  A.addQuote({q:'نص المقولة',c:'الشخصية',a:'الأنمي'});
+ });
+ add('صديق جديد',function(A){
+  A.addFriend({name:'الاسم',handle:'@المعرف',platform:'TikTok',url:'https://...'});
+ });
+ add('حساب جديد',function(A){
+  A.addSocial({name:'Discord',id:'@4_ad10',url:'https://...',tag:'مجتمع',b:'سيرفري.',svg:''});
+ });
+ add('تنسيق جديد',function(A){
+  A.css('.soc h3{color:#ff3b47}');
+ });
+ add('صفحة جديدة',function(A){
+  A.addPage('works','أعمالي','<h2 class="t">أعمالي</h2>');
+ });
+ */
+
+ /* ↓↓↓ اكتب تحديثاتك الجديدة تحت هذا السطر ↓↓↓ */
+
+
 })();
 </script>
 </body>
