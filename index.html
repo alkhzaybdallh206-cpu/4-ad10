@@ -25,7 +25,6 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;backgroun
 #cv{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 .vig{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(120% 90% at 50% 50%,transparent 50%,rgba(0,0,0,.75))}
 #flash{position:fixed;inset:0;z-index:900;pointer-events:none;opacity:0;background:radial-gradient(circle,rgba(255,59,71,.55),rgba(109,10,18,.7) 60%,#030303)}
-/* enter */
 #loader{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:rgba(3,3,3,.55);transition:opacity .9s var(--out),transform 1.2s var(--out)}
 #loader.out{opacity:0;transform:scale(1.25);pointer-events:none}
 .ldc{text-align:center;width:min(94vw,580px);padding:30px 10px}
@@ -40,7 +39,6 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;backgroun
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 40px;min-height:50px;border:1px solid var(--sv);background:linear-gradient(180deg,var(--rd),var(--dk));font:700 1.15rem var(--rk);letter-spacing:.04em;transition:box-shadow .3s,transform .2s}
 .btn:hover{box-shadow:0 0 30px rgba(255,59,71,.55)}.btn:active{transform:scale(.97)}
 #enter{margin-top:6px;animation:fi 1.4s var(--out) .9s both}
-/* nav */
 .top{position:fixed;inset:0 0 auto;z-index:600;display:flex;align-items:center;justify-content:space-between;padding:calc(10px + env(safe-area-inset-top)) max(18px,4vw) 10px;background:linear-gradient(rgba(3,3,3,.92),transparent);direction:ltr}
 .logo{font:800 1.05rem Cinzel,serif;letter-spacing:.16em;color:var(--sv)}.logo b{color:var(--rd2);font-weight:400;margin-right:6px}
 .sbtn{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--ln);color:var(--sv);transition:.3s}.sbtn:hover{border-color:var(--rd2)}.sbtn.off{color:var(--mut)}
@@ -52,8 +50,8 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;backgroun
 .tabs a::after{content:"";position:absolute;inset:auto 14px 0;height:2px;background:var(--rd2);box-shadow:0 0 10px var(--rd2);transform:scaleX(0);transition:transform .5s var(--out)}.tabs a.on::after{transform:scaleX(1)}
 @media(min-width:821px){.tabs{top:10px;left:50%;transform:translateX(-50%)}.tabs a{padding:10px 20px}}
 @media(max-width:820px){.tabs{inset:auto 0 0;gap:0;background:rgba(3,3,3,.95);backdrop-filter:blur(14px);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom)}
-.tabs a{flex:1;flex-direction:column;gap:0;padding:9px 0 8px;font-size:.9rem}.tabs a::after{inset:-1px 25% auto;height:2px}}
-/* pages */
+.tabs a{flex:1;flex-direction:column;gap:0;padding:9px 0 8px;font-size:.9rem}.tabs a::after{inset:-1px 25% auto;height:2px}
+.foot{padding-bottom:calc(90px + env(safe-area-inset-bottom))}}
 #stage{position:relative;z-index:3}
 .page{display:none;min-height:100svh;padding:100px 0 130px}.page.on{display:block}
 .wrap{width:min(1040px,calc(100% - 40px));margin-inline:auto}
@@ -95,20 +93,6 @@ h2.t{display:inline-block;font:700 clamp(2.4rem,10vw,4.4rem)/1.5 var(--ar);backg
 .foot .nm{font-size:.95rem;animation:sh 6s linear infinite}
 #toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));transform:translate(-50%,20px);z-index:950;padding:12px 24px;background:#0c0607;border:1px solid var(--rd2);color:var(--tx);font-weight:700;opacity:0;pointer-events:none;transition:.4s var(--out)}
 #toast.show{opacity:1;transform:translate(-50%,0)}#toast.err{background:#2a0508}
-[hidden]{display:none!important}
-.qg{align-items:start}
-.tb{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap}
-.sr{flex:1;min-width:220px;display:flex;align-items:center;gap:10px;padding:0 14px;border:1px solid var(--ln);background:var(--c1);backdrop-filter:blur(6px)}
-.sr:focus-within{border-color:var(--rd2);box-shadow:0 0 18px rgba(255,59,71,.25)}.sr svg{width:20px;height:20px;color:var(--rd2);flex:none}
-.sr input{flex:1;min-width:0;min-height:50px;background:none;border:0;outline:0;color:var(--tx);font:inherit}
-.srt{padding:0 18px;min-height:50px;border:1px solid var(--ln);background:var(--c1);font-weight:700;transition:.3s}.srt:hover{border-color:var(--rd2)}
-.cnt{color:var(--mut);font-size:.9rem;margin:4px 0 16px}
-.qh{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-inline-end:34px}
-.qn{font:700 .85rem Cinzel,serif;color:var(--rd2);border:1px solid var(--rd);padding:1px 10px;letter-spacing:.08em;direction:ltr}.qw{color:var(--sv);font-weight:700}
-.qc blockquote{white-space:pre-line;font-size:clamp(1.15rem,4.4vw,1.4rem);line-height:2}
-.qc blockquote.cl{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
-.mo{color:var(--rd2);font-weight:700;min-height:40px}
-.mw{text-align:center;margin-top:26px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -116,7 +100,7 @@ h2.t{display:inline-block;font:700 clamp(2.4rem,10vw,4.4rem)/1.5 var(--ar);backg
 <div class="neb" aria-hidden="true"><i></i><i></i><i></i></div><canvas id="cv" aria-hidden="true"></canvas><div class="vig"></div><div id="flash"></div>
 
 <div id="loader"><div class="ldc"><div class="frame">
- <p class="nm lt">♚ 𝒜 𝐵 𝒟 𝒰 𝐿 𝐿 𝒜 𝐻 ♚</p><p class="hd lt">4_ad10</p>
+ <p class="nm lt">♚ 𝒜 ℬ 𝒟 𝒰 ℒ ℒ 𝒜 ℋ ♚</p><p class="hd lt">4_ad10</p>
  <div class="dv" aria-hidden="true">❖</div>
  <button class="btn" id="enter">دخول الموقع</button>
 </div></div></div>
@@ -127,60 +111,60 @@ h2.t{display:inline-block;font:700 clamp(2.4rem,10vw,4.4rem)/1.5 var(--ar);backg
 
 <main id="stage">
 <section class="page on" id="me"><div class="wrap">
- <div class="hero rv"><p class="nm lt">♚ 𝒜 𝐵 𝒟 𝒰 𝐿 𝐿 𝒜 𝐻 ♚</p><h1 class="big lt">4_AD10</h1><div class="dv" aria-hidden="true">❖</div>
+ <div class="hero rv"><p class="nm lt">♚ 𝒜 ℬ 𝒟 𝒰 ℒ ℒ 𝒜 ℋ ♚</p><h1 class="big lt">4_AD10</h1><div class="dv" aria-hidden="true">❖</div>
   <p class="b">أنا عبدالله، صانع محتوى ومونتير أنمي. أصنع مشاهد بإيقاع سينمائي، وأبحر بها في عمق الفضاء.</p></div>
  <p class="eye rv" style="--i:1">❖ تواصل معي</p><h2 class="t wr">حساباتي</h2>
  <div class="sg" id="sg"></div></div></section>
 
 <section class="page" id="quotes"><div class="wrap">
  <p class="eye rv">❖ الاقتباسات</p><h2 class="t wr">مقولات الأنمي</h2>
- <p class="sub rv" style="--i:2">اضغط «نسخ» لنسخ نص العبارة فقط، بدون اسم الشخصية.</p>
- <div class="tb rv" style="--i:3"><label class="sr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="qs" type="search" placeholder="ابحث برقم العبارة أو الشخصية أو أي كلمة..." autocomplete="off" enterkeyhint="search"></label><button class="srt" id="so">الترتيب: من الأقدم</button></div>
- <p class="cnt" id="qn"></p><div class="qg" id="qg"></div><div class="mw"><button class="btn" id="qm" hidden>عرض المزيد</button></div></div></section>
+ <p class="sub rv" style="--i:2">اضغط «نسخ» لنسخ نص المقولة فقط.</p>
+ <div class="qg" id="qg"><div class="empty rv">قريباً تُضاف مقولات الأنمي هنا ❖</div></div></div></section>
 
 <section class="page" id="friends"><div class="wrap">
  <p class="eye rv">❖ الشلّة</p><h2 class="t wr">حسابات أصدقائي</h2>
  <p class="sub rv" style="--i:2">أصدقائي ومبدعون أنصحكم بمتابعتهم.</p>
- <div class="fg" id="fg"></div></div></section>
+ <div class="fg" id="fg"><div class="empty rv">قريباً تُضاف حسابات الأصدقاء هنا ❖</div></div></div></section>
 
-<footer class="wrap foot"><div class="dv" aria-hidden="true">❖</div><p class="nm lt">♚ 𝒜 𝐵 𝒟 𝒰 𝐿 𝐿 𝒜 𝐻 ♚</p>
+<footer class="wrap foot"><div class="dv" aria-hidden="true">❖</div><p class="nm lt">♚ 𝒜 ℬ 𝒟 𝒰 ℒ ℒ 𝒜 ℋ ♚</p>
  <p>© <span id="yr"></span> <span class="lt">4_AD10</span> — جميع الحقوق محفوظة.</p>
  <p>التصاميم والمونتاجات ملك لصاحب الموقع، ولا يجوز إعادة نشرها بدون إذن. المقولات لأصحابها الأصليين.</p></footer>
 </main>
 <div id="toast" role="status" aria-live="polite"></div>
 
+<!-- ===== السكربت الأساسي (لا تلمسه إلا للضرورة) ===== -->
 <script>
 (function(){
 var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
 var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
 var sleep=function(ms){return new Promise(function(r){setTimeout(r,ms)})};
 
-/* ✎ الإعدادات — عدّل هنا */
+/* ✎ الإعدادات */
 var CFG={
  me:[
   {name:'TikTok',url:'https://www.tiktok.com/@4_ad10',tag:'صانع محتوى',b:'مقاطع قصيرة ومونتاج أنمي بإيقاع سريع.',svg:'<path d="M16 3c.3 2.4 1.8 4 4 4.2v3a7 7 0 0 1-4-1.3v6.4a5.3 5.3 0 1 1-5.3-5.3c.3 0 .6 0 .9.1v3.1a2.3 2.3 0 1 0 1.4 2.1V3z" fill="currentColor"/>'},
   {name:'Instagram',url:'https://www.instagram.com/4_ad10',tag:'حساب شخصي',b:'حسابي الشخصي.',svg:'<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>'},
   {name:'YouTube',url:'https://youtube.com/@4_ad10',tag:'صانع محتوى',b:'الأعمال الكاملة بجودة عالية.',svg:'<rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 9.2v5.6l5-2.8z" fill="currentColor"/>'}],
- /* أضف مقولة بسطر: {q:'النص',c:'الشخصية',a:'الأنمي'} */
+ /* مقولة: {q:'النص',c:'الشخصية',a:'الأنمي'} */
  quotes:[],
- /* أضف صديق بسطر: {name:'الاسم',handle:'@المعرف',platform:'TikTok',url:'https://...'} */
+ /* صديق: {name:'الاسم',handle:'@المعرف',platform:'TikTok',url:'https://...'} */
  friends:[]};
 
-/* الصوت: يشتغل بعد ضغطك على «دخول الموقع» وتكتمه من الزر أعلى الصفحة */
+/* الصوت */
 var S={c:null,m:null,nb:null,on:0,
  init:function(){if(this.c)return;var C=window.AudioContext||window.webkitAudioContext;if(!C)return;var c=this.c=new C();this.m=c.createGain();this.m.gain.value=.65;this.m.connect(c.destination);var n=c.sampleRate;this.nb=c.createBuffer(1,n,n);var d=this.nb.getChannelData(0);for(var i=0;i<n;i++)d[i]=Math.random()*2-1},
  tone:function(f,ty,d,v,to,dl){if(!this.on||!this.c)return;var c=this.c,t=c.currentTime+(dl||0),o=c.createOscillator(),g=c.createGain();o.type=ty;o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(to,t+d);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(this.m);o.start(t);o.stop(t+d+.05)},
  noise:function(d,f1,f2,v){if(!this.on||!this.c)return;var c=this.c,t=c.currentTime,s=c.createBufferSource(),b=c.createBiquadFilter(),g=c.createGain();s.buffer=this.nb;b.type='bandpass';b.Q.value=1.2;b.frequency.setValueAtTime(f1,t);b.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+d*.5);g.gain.exponentialRampToValueAtTime(.0001,t+d);s.connect(b);b.connect(g);g.connect(this.m);s.start(t);s.stop(t+d+.05)},
  tap:function(){this.tone(820,'sine',.09,.08,430)},
  warp:function(){this.noise(1.1,160,4600,.3);this.tone(70,'sawtooth',1.1,.1,420);this.tone(55,'sine',1.2,.3,30,.55)},
- copy:function(){[784,988,1318,1568].forEach(function(f,i){S.tone(f,'sine',.55,.09,0,i*.07);S.tone(f*2,'sine',.3,.025,0,i*.07)});this.noise(.35,3000,9000,.04)},
+ copy:function(){this.tone(740,'sine',.25,.12);this.tone(1110,'sine',.45,.1,0,.1)},
  boom:function(){this.tone(60,'sine',2.4,.7,22);this.tone(120,'triangle',1.8,.16,44);this.noise(2,150,3600,.3);this.tone(440,'sine',3,.04,220)},
  set:function(on){this.on=on;if(on){this.init();this.c&&this.c.resume()}$('#sb').classList.toggle('off',!on)}};
 $('#sb').onclick=function(){S.set(S.on?0:1);if(S.on)S.tap()};
-document.addEventListener('click',function(e){if(e.target.closest('a,button')&&!e.target.closest('#sb,#enter'))S.tap()});
+document.addEventListener('click',function(e){if(e.target.closest('a,button')&&!e.target.closest('#sb,#enter,[data-go]'))S.tap()});
 document.addEventListener('visibilitychange',function(){if(S.c){document.hidden?S.c.suspend():S.on&&S.c.resume()}});
 
-/* الفضاء: نجوم تتحرك باتجاهك، وقفزة سرعة ضوئية عند الانتقال */
+/* الفضاء */
 var cv=$('#cv'),cx=cv.getContext('2d'),W,H,spd=.6,tgt=.6,ST=[],SH=null;
 function rst(s,far){s.x=Math.random()*2-1;s.y=Math.random()*2-1;s.z=far?Math.random()*.9+.1:1;s.pz=s.z;s.r=Math.random()<.2}
 function rz(){W=cv.width=innerWidth;H=cv.height=innerHeight}rz();addEventListener('resize',rz);
@@ -196,10 +180,10 @@ function frame(){
  if(!RM)requestAnimationFrame(frame)}
 if(RM){tgt=spd=0}frame();
 
-/* الصفحات والتنقل */
+/* الصفحات والتنقل (أضف صفحة جديدة: PG + قسم HTML بنفس الـ id) */
 var PG=[{id:'me',t:'حساباتي'},{id:'quotes',t:'المقولات'},{id:'friends',t:'الأصدقاء'}];
-var ids=PG.map(function(p){return p.id}),cur='me',ix=0,busy=0,AR=['٠١','٠٢','٠٣'];
-$('#tabs').innerHTML=PG.map(function(p,i){return'<a href="#'+p.id+'" data-go="'+p.id+'"><b>'+AR[i]+'</b><span>'+p.t+'</span></a>'}).join('');
+var ids=PG.map(function(p){return p.id}),cur='me',ix=0,busy=0,AR=['٠١','٠٢','٠٣','٠٤','٠٥','٠٦'];
+function tabs(){$('#tabs').innerHTML=PG.map(function(p,i){return'<a href="#'+p.id+'" data-go="'+p.id+'"><b>'+AR[i]+'</b><span>'+p.t+'</span></a>'}).join('');mark()}
 function mark(){$$('#tabs a').forEach(function(a){a.classList.toggle('on',a.dataset.go===cur)})}
 async function go(p,pop){
  var ni=ids.indexOf(p);if(ni<0||busy||p===cur)return;busy=1;S.warp();
@@ -212,62 +196,826 @@ async function go(p,pop){
    fl.animate([{opacity:0},{opacity:.7,offset:.35},{opacity:0}],{duration:900,easing:'ease-out'});
    swap();
    nw.animate([{opacity:0,transform:'scale(.9)',filter:'blur(12px)'},{opacity:1,transform:'none',filter:'blur(0)'}],{duration:850,easing:'cubic-bezier(.16,1,.3,1)'});
-   await sleep(260);tgt=.6;
+   await sleep(260);
   }
- }catch(e){swap()}
+ }catch(e){if(cur!==p)swap()}
  tgt=.6;busy=0}
+tabs();
 document.addEventListener('click',function(e){var t=e.target.closest('[data-go]');if(t){e.preventDefault();go(t.dataset.go)}});
-addEventListener('popstate',function(){go(location.hash.slice(1)||'me',1)});
+addEventListener('popstate',function(){var p=location.hash.slice(1)||'me';if(busy)setTimeout(function(){go(p,1)},800);else go(p,1)});
 var sx=0,sy=0;
 document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
 document.addEventListener('touchend',function(e){if($('#loader'))return;var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>90&&Math.abs(dx)>Math.abs(dy)*1.8){var n=ix+(dx<0?1:-1);if(ids[n])go(ids[n])}},{passive:true});
 
 /* المحتوى */
 var tt;function toast(m,err){var t=$('#toast');t.textContent=m;t.className='show'+(err?' err':'');clearTimeout(tt);tt=setTimeout(function(){t.className=''},2200)}
-function copy(x){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(x);return new Promise(function(res,rej){var a=document.createElement('textarea');a.value=x;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();var ok=false;try{ok=document.execCommand('copy')}catch(e){}a.remove();ok?res():rej()})}
-CFG.me.forEach(function(s,i){var a=document.createElement('a');a.className='soc rv';a.style.setProperty('--i',i+3);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';
- a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+s.svg+'</svg><h3>'+s.name+'</h3><div class="id">@4_ad10</div><p>'+s.b+'</p><div class="go"><span>'+s.tag+'</span><span>↗</span></div>';$('#sg').append(a)});
-/* العبارات: تُقرأ من ملف quotes.txt بنفس تنسيقك + أي عبارات تضيفها في CFG.quotes */
-var ALL=[],VIEW=[],SHOWN=0,PER=12,ASC=1,QS='';
-function d2n(x){return String(x).replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632})}
-function norm(x){return d2n(x||'').replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').toLowerCase()}
-function parse(t){var out=[],cur=null,re=/^\s*[^\s\d٠-٩]{1,3}\s*([0-9٠-٩]{1,3})\s*[—–-]+\s*(.+?)\s*$/;
- t.replace(/\r/g,'').split('\n').forEach(function(l){var m=l.match(re);if(m){if(cur)out.push(cur);cur={n:+d2n(m[1]),c:m[2],b:[]}}else if(cur)cur.b.push(l)});
- if(cur)out.push(cur);
- return out.map(function(o){var x=o.b.join('\n').trim().replace(/\n{3,}/g,'\n\n');if(/^["“«]/.test(x)&&/["”»]$/.test(x))x=x.slice(1,-1).trim();return{n:o.n,c:o.c,q:x}}).filter(function(o){return o.q})}
-function mk(q,i){var c=document.createElement('article');c.className='qc rv';c.style.setProperty('--i',i%6);
- var h=document.createElement('div');h.className='qh';var nn=document.createElement('span');nn.className='qn';nn.textContent='#'+String(q.n).padStart(2,'0');var w=document.createElement('span');w.className='qw';w.textContent=q.c;h.append(nn,w);
- var b=document.createElement('blockquote'),lg=q.q.length>230||q.q.split('\n').length>7;b.textContent=q.q;if(lg)b.className='cl';
- var m=document.createElement('div');m.className='qm';var d=document.createElement('div');
- if(lg){var mo=document.createElement('button');mo.className='mo';mo.textContent='عرض الكل';mo.onclick=function(){var o=b.classList.toggle('cl');mo.textContent=o?'عرض الكل':'إخفاء'};d.append(mo)}
- else if(q.a){var s2=document.createElement('small');s2.textContent=q.a;d.append(s2)}
+function copy(x){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(x);return new Promise(function(res,rej){var a=document.createElement('textarea');a.value=x;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();a.setSelectionRange(0,99999);var ok=false;try{ok=document.execCommand('copy')}catch(e){}a.remove();ok?res():rej()})}
+function clr(box){var e=$('.empty',box);e&&e.remove()}
+var n={s:0,q:0,f:0};
+function addSocial(s){var a=document.createElement('a');a.className='soc rv';a.style.setProperty('--i',n.s++ +3);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';
+ a.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+(s.svg||'')+'</svg><h3>'+s.name+'</h3><div class="id">'+(s.id||'@4_ad10')+'</div><p>'+(s.b||'')+'</p><div class="go"><span>'+(s.tag||'')+'</span><span>↗</span></div>';$('#sg').append(a)}
+function addQuote(q){var box=$('#qg');clr(box);var c=document.createElement('article');c.className='qc rv';c.style.setProperty('--i',n.q++ +3);
+ var b=document.createElement('blockquote');b.textContent=q.q;var m=document.createElement('div');m.className='qm';var d=document.createElement('div'),nn=document.createElement('b'),s=document.createElement('small');nn.textContent=q.c||'';s.textContent=q.a||'';d.append(nn,s);
  var bt=document.createElement('button');bt.className='cp';bt.textContent='نسخ';
- bt.onclick=function(){copy(q.q).then(function(){S.copy();if(navigator.vibrate)navigator.vibrate(15);toast('تم نسخ العبارة ✓');bt.classList.add('ok');bt.textContent='تم ✓';setTimeout(function(){bt.classList.remove('ok');bt.textContent='نسخ'},1600)}).catch(function(){toast('تعذّر النسخ، حاول مرة أخرى',1)})};
- m.append(d,bt);c.append(h,b,m);return c}
-function draw(reset){var g=$('#qg');if(reset){g.innerHTML='';SHOWN=0}
- VIEW.slice(SHOWN,SHOWN+PER).forEach(function(q,i){g.append(mk(q,i))});SHOWN=Math.min(VIEW.length,SHOWN+PER);
- $('#qm').hidden=SHOWN>=VIEW.length;
- $('#qn').textContent=QS?('نتائج البحث: '+VIEW.length+' من '+ALL.length):('عدد العبارات: '+ALL.length);
- if(!VIEW.length)g.innerHTML='<div class="empty" style="grid-column:1/-1">'+(ALL.length?'لا توجد عبارات مطابقة لبحثك ❖':'قريباً تُضاف عبارات الأنمي هنا ❖')+'</div>'}
-function apply(){var t=norm(QS).split(/\s+/).filter(Boolean);
- VIEW=ALL.filter(function(q){var h=norm(q.n+' '+q.c+' '+q.q);return t.every(function(k){return h.indexOf(k)>-1})}).sort(function(a,b){return ASC?a.n-b.n:b.n-a.n});draw(1)}
-var sT;$('#qs').addEventListener('input',function(){QS=this.value.trim();clearTimeout(sT);sT=setTimeout(apply,150)});
-$('#so').onclick=function(){ASC=!ASC;this.textContent='الترتيب: '+(ASC?'من الأقدم':'من الأحدث');apply()};
-$('#qm').onclick=function(){draw(0)};
-function load(list){var mx=list.reduce(function(m,q){return Math.max(m,q.n)},0);CFG.quotes.forEach(function(q,i){list.push({n:mx+i+1,c:q.c,q:q.q,a:q.a})});ALL=list;apply()}
-fetch('quotes.txt',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){load(parse(t))}).catch(function(){load([]);if(!ALL.length)$('#qn').textContent='لم أجد ملف quotes.txt — ارفعه بجانب index.html'});
-if(!CFG.friends.length)$('#fg').innerHTML='<div class="empty rv">قريباً تُضاف حسابات الأصدقاء هنا ❖</div>';
-CFG.friends.forEach(function(f,i){var a=document.createElement('a');a.className='fr rv';a.style.setProperty('--i',i+3);a.href=f.url;a.target='_blank';a.rel='noopener noreferrer';
- var av=document.createElement('div');av.className='av';av.textContent=(f.name||'؟').trim().charAt(0);var d=document.createElement('div'),n=document.createElement('b'),h=document.createElement('small'),p=document.createElement('em');n.textContent=f.name;h.textContent=f.handle||'';p.textContent=f.platform||'';d.append(n,h,p);
- var ar=document.createElement('span');ar.className='ar2';ar.textContent='↗';a.append(av,d,ar);$('#fg').append(a)});
+ bt.onclick=function(){copy(q.q).then(function(){S.copy();toast('تم نسخ المقولة ✓');bt.classList.add('ok');bt.textContent='تم ✓';setTimeout(function(){bt.classList.remove('ok');bt.textContent='نسخ'},1600)}).catch(function(){toast('تعذّر النسخ، حاول مرة أخرى',1)})};
+ m.append(d,bt);c.append(b,m);box.append(c)}
+function addFriend(f){var box=$('#fg');clr(box);var a=document.createElement('a');a.className='fr rv';a.style.setProperty('--i',n.f++ +3);a.href=f.url;a.target='_blank';a.rel='noopener noreferrer';
+ var av=document.createElement('div');av.className='av';av.textContent=(f.name||'؟').trim().charAt(0);var d=document.createElement('div'),nn=document.createElement('b'),h=document.createElement('small'),p=document.createElement('em');nn.textContent=f.name;h.textContent=f.handle||'';p.textContent=f.platform||'';d.append(nn,h,p);
+ var ar=document.createElement('span');ar.className='ar2';ar.textContent='↗';a.append(av,d,ar);box.append(a)}
+function css(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s)}
+function addPage(id,title,html){PG.push({id:id,t:title});var s=document.createElement('section');s.className='page';s.id=id;s.innerHTML='<div class="wrap">'+html+'</div>';$('#stage').insertBefore(s,$('.foot'));ids.push(id);tabs();return s}
+CFG.me.forEach(addSocial);CFG.quotes.forEach(addQuote);CFG.friends.forEach(addFriend);
 $('#yr').textContent=new Date().getFullYear();
 
-/* الدخول: قفزة نحو الفضاء */
+/* الدخول */
 var entered=0;
 $('#enter').onclick=async function(){if(entered)return;entered=1;S.set(1);S.boom();tgt=60;var l=$('#loader');l.classList.add('out');await sleep(RM?50:1100);l.remove();document.body.classList.remove('lock');tgt=.6;
  var h=location.hash.slice(1);if(ids.indexOf(h)>0)go(h,1);else mark()};
 mark();
+
+/* جسر للتحديثات: كل ما تحتاجه متاح داخل SITE */
+window.SITE={CFG:CFG,$:$,$$:$$,S:S,go:go,toast:toast,copy:copy,sleep:sleep,css:css,addSocial:addSocial,addQuote:addQuote,addFriend:addFriend,addPage:addPage};
 })();
 </script>
-</body>
-</html>
+
+<!-- ===== ملف العبارات: لإضافة عبارة جديدة انزل لآخر هذا الجزء واكتب فوق سطر `; ===== -->
+<script>
+/* ===== ملف العبارات =====
+   لإضافة عبارة جديدة: انزل لآخر الملف، واكتب فوق سطر `; بنفس الصيغة:
+   ♕ 81 — اسم الشخصية
+   نص العبارة
+   (سطر فاضي بين كل عبارة وعبارة)
+   لا تستعمل علامة ` داخل النص أبداً. */
+window.QUOTES_TEXT=`
+♕ 01 — رورونوا زورو
+
+"لم نعد نلوم الغرباء! فالأقربون فعلوا الأسوأ! حقاً! إنكسرنا من المكان الذي آمنا به، يا لها من حقيقة مؤلمة!"
+
+♡ 02 — رورونوا زورو
+
+"أنا لا أُخاف الموت، ولا أخشى المخاطرة.. قررت أن أخاطر بحياتي في سبيل تحقيق هذا الهدف، ولا يحق لأحد أن يصفني بالأحمق، لأن النجاح لا يتحقق من دون تضحيات.. لن أسمح لليأس أن يسيطر علي."
+
+✓ 03 — أوبيتو أوتشيها
+
+"انظر إلي.. لا يوجد إلا فراغ في قلبي.. لم أعد أشاعر حتى بأي ألم كان.. لا تشعر بتأنيب الضمير.. فقط فتحت هذه الفجوة بهذا العالم الجهنمي! في الماضي كان كل ما شعرت به هنا هو الألم! فما المعنى من ذلك؟! لهذا تخليت عن كل شيء."
+
+∆ 04 — مونكي دي لوفي وزورو
+
+لوفي: نحن في طريقنا إلى القرصنة يا زورو.. لا شك أننا سنواجه مغامرات كثيرة! نعم سأصير زعيم القراصنة!
+زورو: قل لي يا لوفي.. أنت دائماً تكرر هذه العبارة، هل من سبب معين لذلك؟
+لوفي: لا أبداً، ولكن.. وعدت ذلك الرجل بأن أجمع فريقاً، وأن أبحث عن الكنز المفقود، وأن أصير زعيم القراصنة!
+
+♕ 05 — مونكي دي لوفي
+
+"عندما أغضب لا أستطيع أن أنام، وعندما أحزن.. لا أكف عن التفكير بالسبب الذي أحزنني، لا يمكنني أن أتحكم في نفسي."
+
+♡ 06 — أوروتشيمارو
+
+أوروتشيمارو: لا مغزى من النحيب والحزن على الذين فقدوا حياتهم، إن كان هناك أي معنى وراء الموت فيجب علينا الاستفادة منه.
+صوت جانبي: إذن وما المعنى من الحياة؟
+أوروتشيمارو: لا يوجد معنى.. سيكون هناك معنى للحياة فقط إن كانت خالدة.
+
+✓ 07 — ناروتو أوزوماكي
+
+"أغلق فمك! لماذا لم تعاملني كمعلم لي إلا في هذا الوقت؟! أيها المعلم.. أنت لا تعرف ما أعانيه، حتى لو عدت معك ستبقى الأمور كما هي.. أنا دائماً وحيد؛ ومنبوذ دائماً، لا أحد يهتم بي ولا أحد يعيرني اهتماماً! ولكن في هذه المرة.. إن الأمر مختلف تماماً، إذا أنجزت المهمة فسيقبلونني كصديق، وعندها لن أبقى بمفردي بعد الآن.. ولن أشعر بمعاناة الوحيدة!"
+
+∆ 08 — الدكتور هيلولوك
+
+"أتُعرف متى يموت الإنسان؟ هل يموت عندما تدخل رصاصة في قلبه؟ لا! هل يموت بسبب مرض قاتل؟ لا! هل يموت إن دخل السم إلى جسده؟ لا! يموت.. عندما ينساه الناس! حتى لو مت الآن فأنا باقٍ في ذاكرة الجميع."
+
+♕ 09 — زورو ولوفي
+
+زورو: قل لي، كم رجلاً تنوي أن تضم إلى الفريق؟ العمل الذي تخطط له عملٌ كبير جداً يا لوفي، وأظن أنه يحتاج إلى رجال كثيرين لتضمهم إلى الفريق!
+لوفي: أنت تكفي!
+زورو: ها؟ أنا؟!
+لوفي: أنا وأنت فقط!
+
+♡ 10 — شارة خلف حائط الحديقة
+
+وحيدٌ حزين
+في عالمٍ مجهول
+تائهٌ هو وبعيد
+كُلُّ ما عشناه
+بات صدى ذكريات
+من أين أتينا؟
+وما مصيرنا؟
+إن ضاعت الأحلام.. فالنسرح في الخيال!
+
+✓ 11 — ناروتو وإيروكا
+
+الطالبة: نعم، أنت أيها الصبي تزعجنا! أنت كما الحشرة المزعجة.
+إيروكا: أنت تقسو عليه يا "هيباتشي"، لكنك محقٌّ أيضاً.
+ناروتو: ماذا تقول؟!
+إيروكا: أيها الطلاب! كفُّوا عن السخرية من "ناروتو"..
+ناروتو: معلمي؟
+إيروكا: لا تسخروا منه.. بل تجاهلوه!
+ناروتو: ها؟!
+
+∆ 12 — عامر
+
+"لن أستسلم مهما حدث معي.. سأتابع مسيرتي! ففي قلبي عاصفة من الطموح المتقد.. سوف أدرس بجد، وسأكمل دراستي وحدي كذلك العالم! سأستمد قوتي من صعوبة ظروف تعلمي.. وستكون إرادتي هي المفتاح الذي سيفتح لي الأبواب المرصدة في طريقي لتحقيق هدفي، وسأحققه! سأسلك هذه الطريق الفارغة المرسومة أمامي.. وسأبنيها بأحلامي!"
+
+♕ 13 — زورو ولوفي
+
+زورو: زعيم القراصنة؟! هل قلت إنك تريد أن تصير زعيم القراصنة يا ولد؟ هل أنت مدرك لما تقول؟
+لوفي: زعيم القراصنة تعني زعيم القراصنة، ليس لها معنى آخر!
+زورو: أنا أيضاً دهشت من ذلك، ولكن الواضح أن لوفي جادٌّ في هذا.. يريد أن يصير زعيم القراصنة ويحصل على الكنز، ويحصل على القطعة النادرة التي فيه!
+لوفي: إيهيهيهيهي!
+
+♡ 14 — زورو ولوفي
+
+زورو: أنت مجدداً؟ ماذا تريد مني؟
+لوفي: سأفك وثاقك على شرط أن تنضم إليّ!
+زورو: أنضم إليك؟!
+لوفي: سأشكل فريق قراصنة، ولذلك أبحث عن أمثالك.
+زورو: توقف! أتريدني أن أصير شريراً يا هذا؟ مستحيل.. مستحيل!
+لوفي: لماذا تكره القراصنة؟
+زورو: أشرارٌ يعيشون على السلب والنهب!
+لوفي: ما المشكلة في ذلك؟ الجميع يقول إنك شرير، فهل أنت كما يقولون يا زورو؟
+زورو: أنا لا أهتم لما يقوله الناس، أنا أعرف نفسي ولذلك أفعل ما اريد.. هه! أنا لست نادماً على أي شيء فعلته فيما مضى، هل تفهمني؟
+
+✓ 15 — عهد الأصدقاء
+
+"مرت الأيام بسرعة.. أما زلت تتذكر اليوم الأول للقائنا؟ قضينا معاً فترة قصيرة، كنت خلالها أفضل شخص تعرفت عليه في حياتي كلها.. أعدك بأن تكون صداقتنا حقيقية للأبد!"
+
+∆ 16 — أوبيتو أوتشيها
+
+"أريد أن أعرف ماذا حدث لي؟ لماذا ضاع مني قلبي؟ أصبحت عواطفي باردة.. لا أحب أحداً! متى تغيرت وضاع مني قلبي؟ كنت ولداً عادياً مهمشاً.. لكنني سعيد! يومها، كان قلبي معي.. كنت لطيفاً، أحب الجميع، والابتسامة دوماً على وجهي.. إنني أذرف الدموع.. لكن لماذا؟ ما الذي يدفعني إلى ذلك؟"
+
+♕ 17 — غون فريكس
+
+"أنا لا أخجل من الاعتراف بالحقيقة.. لا عيب أبداً في أن أفكر بنقاط ضعفي.. عليّ أن أعمل وأعمل لأكتسب الخبرة والقوة!"
+
+♡ 18 — جيرايا
+
+"الألم أحياناً يولد داخلنا كره، وإن أذيت شخصاً ما ستصبح مكروهاً.. وعندها ستبدأ بالشعور بالذنب! ولكن، إذا تقبلت ألمك منذ البداية، ستتعامل مع الآخرين بلطف، ولن تسمح للكره بالسيطرة عليك والتحكم بك.. إن تقبلنا لآلامنا وفهمها لمعرفة كيفية التعامل معها، هذا هو المعنى الحقيقي للنمو، والتطور، والارتقاء!"
+
+✓ 19 — ساسكي وإيتاتشي
+
+ساسكي: أبي لا يفكر إلا فيك يا أخي..
+إيتاتشي: وهل تكرهني لهذا؟
+ساسكي: لا مشكلة عندي..
+إيتاتشي: ليس غريباً أن يعيش الشينوبي وهو غارق في كره الآخرين له، هه! كونك مميزاً له ثمنه أيضاً.. إذا ملكت القوة انزلت عن غيرك وصصرت متكبراً، حتى لو حققت كل ما يطلبه منك الناس جميعاً. أما نحن، فما من أخوين في هذا العالم مثلنا! فأنا سأكون أمامك مثل الجدار الذي يجب عليك تجاوزه لكي تتابع.. ولو كرهتني من أعماق قلبك!
+
+∆ 20 — غارا
+
+"إذاً.. أنا قد أكون مصاباً بجرح ما، مثل بقية الناس.. فأنا أتألم دائماً! لا أنزف أي دم.. لكن هذا المكان يؤلمني كثيراً!"
+
+♕ 21 — زورو وميهوك
+
+ميهوك: لم تريد أن يخترق هذا قلبك؟ أجبني!
+زورو: لا أدري لماذا.. صدقني إنني لا أدري! ولكنني تذكرت كل الوعد التي قطعتها على نفسي للذين تدربوني.. لقد عقدوا علي آمالاً كثيرة، فقررت أن لا أتراجع ولو كانت هذه نهايتي!
+ميهوك: ما تفعله جنون!
+زورو: منذ الآن لم يعد هناك فرق كبير..
+ميهوك: تريد الموت؟
+زورو: لن تخيفني بذكر الموت!
+
+♡ 22 — لوفي
+
+"أنا لست قرصاناً.. هذه هي الحقيقة! ولكنني قررت أن أصير زعيم فريق بحارة.. المسألة مسألة قرار.. أتفهم؟"
+
+✓ 23 — ناروتو وميزوكي
+
+ناروتو: أتذكر كيف كرهتهم حين ذلك لأنهم كرهوني.. ولم أستطع أن أفهم لماذا.. تساءلت عن سبب وجودي..
+ميزوكي: روح وحش الثعلب الذي قتل والدي "إيروكا" ودمر قريتنا في جسدك! أنت الوحش ذو الذيل التسعة!
+ناروتو: لم يكن خطئي وجود هذا الشيطان في داخلي.. لكنهم جميعاً تصرفوا كما لو كان خطئي، وهذا تماماً ما زاد الأمر سوءاً!
+
+∆ 24 — جيرايا
+
+"هذا العالم مليء بالحرب.. إنه عالم تملؤه الكراهية والحقد! وأنا أفكر دوماً أن أفعل شيئاً حيال هذا الأمر، وأبحث دائماً لمعرفة ما هية السلام الحقيقي الذي أحلم به.."
+
+♕ 25 — مجهول
+
+"لن تعيش هذا اليوم ثانيةً.. لا تدعه يمر بحزن، كن سعيداً وستغير كل شيء حولك! لقد حزنت قليلاً، لكن هذا الحزن لا يفيدني أبداً.. سأستقبل يومي بفرح، نعم يجب أن أكون سعيداً."
+
+♡ 26 — سانجي ولوفي
+
+سانجي: متمسكٌ بحلمي، حتى لو كان سخيفاً.. سأذهب من أجل هدفي وهو العثور على البحر الأزرق الصافي.
+لوفي: سانجي!
+سانجي: أجل كما أردت.. سأصحبك في الطريق لتصير زعيم القراصنة.
+
+✓ 27 — مجهول
+
+"كيف لكي أن تعيشي في منزل كبير كهذا وتبكين؟ رغم أنني وحيد وليس لدي أي أحد لكني لا أبكي أبداً، نعم بكل تأكيد أنا لا أبكي أبداً.."
+
+∆ 28 — زورو
+
+المتحدث 1: إذاً أنت تريد أن تموت يا زورو..
+زورو: أنا لا أخاف الموت، ولا أخشى المخاطرة.. لأنني عندما قررت أن أصير أبراً من حمل السيف في هذا العالم، قررت أن أخاطر بحياتي في سبيل تحقيق هذا الهدف.. ولا يحق لأحد أن يصفني بالأحمق، لأن النجاح لا يتحقق من دون تضحيات.. لن أسمح لليأس أن يسيطر علي!
+
+♕ 29 — لوفي
+
+"قد تكون إنساناً لطيفاً لوقت طويل ولا أحد ينتبه لك، لكن بمجرد أن تخطئ سينسى الناس أنك كنت شخصاً رائعاً يوماً ما.."
+
+♡ 30 — زورو
+
+"أنا لم أعد أرى أي حلم! كأن أحلامي نفدت.. لعل هذا لأني أَمَطْتُ اللثام عن كل الأسرار التي من حولي، ولهذا! تراني أعيش في هذه الغرفة المظلمة أستجمع أموري المشتتة، فأنا اليوم سقيم.. وكأس الماء هذا هو كل ثروتي."
+
+✓ 31 — مجهول
+
+"أنت تردد كثيراً.. لديك رغبة قوية في المضي قدماً، ولكن ارتباكك وخوفك يجعلانك تتردد في قتال خصمك في مواضع كثيرة.."
+
+∆ 32 — مجهول
+
+المتحدث 1: هِي.. أنت! هل رأيت في حياتك قرصاناً يبتسم وهو على منصة الموت؟
+المتحدث 2: لا، لم أَرى.. حتى أكبر المخادعين كان يشحب لونهم حينما يدركون أنها النهاية.
+المتحدث 1: ولكنه ابتسم.. فذاك الفتى أعاد بذاكرتي إلى اثنين وعشرين عاماً.. وعلى هذه المنصة، ابتسم ملك القراصنة "روجر".
+
+♕ 33 — كاكاشي
+
+"لكل منكم هدفٌ في الحياة يطمح إلى تحقيقه، واجتهادكم كفيلٌ بأن يحول الحلم من خيالٍ إلى واقع.. حياتكم، أنتم تخططون لها، وبجهدكم تصلون إلى ما تطمحون.. الحياة لوحة فارغة وأنتم الرسامون، وبقدر ما تتعبون برسمها وتعملون عليها بجد، ستغدو لوحةً أجمل."
+
+♡ 34 — إيتاتشي
+
+"اسمعني جيداً.. أهالي القرية الذين كانوا يكرهونك أصبحوا يحبونك، وغدوا يعتبرونك زميلاً لهم أيضاً.. هذا لأنك قاتلت ببسالة، وكدت أن تضحي بنفسك كي تنال قبولهم. قلت إن كل من يهتم بك ساعدك بالوصول إلى هنا.. إن نسيت الآخرين بحصولك على القوة، فستصبح متغطراساً وأنانياً.. وغدوت على شاكلة مادارا تماماً.."
+
+✓ 35 — رورونوا زورو
+
+"نفسيتي تتحسن حين أتقن فن التجاهل، فليس كل شيء يستحق مني ردة فعل! وليس كل رأي يستحق أن أنفعل عليه، ولا كل حدث يستحق أن أكبره، ولا كل كلمة تستحق أن أجيب عنها. حين أصمت وأنظر بتمعن، أدرك أنني لا أستطيع تغيير كل ما حولي."
+
+∆ 36 — مجهول
+
+"دافع عما هو غال على قلبك، ولا تبال بالخطر أو الحزن. تشجع وكن صلبا كالصخر، حتى لو عرضت حياتك للخطر، فلا تستسلم! ودافع إلى النهاية عن نفسك، حتى لو لم يبق لديك سوى يديك!"
+
+♕ 37 — مجهول
+
+"يا قلبُ لا تبكِ عليها إنها..
+تهوى الفراقَ وبالمشاعرِ تلعبُ
+يا قلبُ لا ترضى علينا ذلّةً
+إني عزيزٌ شامخٌ لا أُغلبُ!"
+
+♡ 38 — رورونوا زورو
+
+"إسمع! الرجل الذي يحمل الآخرين مسؤولية أخطائه.. لا يزال في بداية طريقه.. أما من يلوم نفسه فقط.. قطع نصف الطريق نحو النجاح.. والذي لا يلوم أحداً.. فقط وصل إلى غايته.. وحقق الإتزان الذاتي."
+
+✓ 39 — عهد الأصدقاء
+
+"تعرفت على أصدقاء يتحلون بأخلاق نبيلة، رغم أنهم من أسر فقيرة، ولقد أُجبروا على هذا العمل مقابل مبالغ زهيدة. كنا نتساعد ونحب بعضنا، ولولا أننا أصدقاء حقيقيون لهلك بعضنا من المرض والجوع. أنا أحب هؤلاء الأولاد وأحترمهم كثيراً، ولولاهم لما استطعت أن أقف أمامكم الآن. لذا أرى أن النبيل ليس لقباً، بل هو خُلق."
+
+∆ 40 — غامبول
+
+"ذات مرة سُئل شخص صديقه: ماذا أعني لك؟ قال له: أنت وتيني. قال له: ما هو الوتين؟ فأجابه: هو شريان متصل بالقلب، إذا انقطع.. انقطعت الحياة!"
+
+♕ 41 — مجهول
+
+"الحب يبدأ عندما ينتهي الحماس.. لهفة البدايات ليست حباً.. فالإنسان لا يحب في أسبوع أو شهر.. لا يمكنك أن تقول إنك تحب البحر وأنت تقف على الشاطئ.. لهذا يجب أن تخوض في أعماقه، وتضربك أمواجه، وتشرب من مياهه المالحة، وتجرح قدمك بصخرة، فتلمس عيوبه، وترى ظلماته، وتعرف كيف يغضب.. وبعدها فقط، إما أن تحبه كله أو تكرهه كله."
+
+♡ 42 — إيتاتشي
+
+"أنت الآن أصبحت تعرف كل الحقيقة.. أنا تعمدت إبعادك عني وجعلتك تكرهني.. كل هذا لأنني لم أرغب في توريطك.. أتمنى لو كنت أملك الشجاعة منذ البداية.. لكي أنظر في عينيك وأخبرك بالحقيقة.. لو فعلت ذلك.. لما اضطررت للوقوف أمامك اليوم كشخص فاشل.. في النهاية.. أريدك فقط أن تعلم شيئاً مهماً.. أنت لست مضطراً لمسامحتي.. ومهما فعلت من الآن فصاعداً.. اعلم أنني سأبقى أحبك على الدوام."
+
+✓ 43 — غارا
+
+"وكما ترون، فشلت في هدفي الوحيد الذي من أجله منحت الحياة. فلماذا سأبقى في هذا الوجود؟ ولماذا سأستمر في البقاء حياً؟ لم أجد إجابة على ذلك لفترة طويلة. ولكن! لكي تعيش فأنت بحاجة إلى هدف. إن الوجود بلا هدف هو كالموت!"
+
+∆ 44 — مادارا
+
+"تلك النظرة.. أهذا عرق؟ كلا، إنه مجرد مطر. ما كان لهؤلاء الحمقى أن يدفعوني للتعرق. ما كان ناروتو إلا هدفاً لاختبار ساسكي، ويفترض به أن يكون مجرد لعبة لإمتاعي."
+
+♕ 45 — إيتاتشي أوتشيها
+
+"سأقوم بإيقاف تقنية الإحياء الآن، وجميع الموتى الذين تم إحياؤهم سيتلاشون. ينبغي لهذا أن ينهي الحرب.. ولكن، أنت أيضاً سترحل. سأكون قد حميت قريتي بصفتي إيتاتشي أوتشيها من قرية الورق، ولم يعد هناك ما أتحسر عليه."
+
+♡ 46 — مادارا
+
+"عليك تقبل الحقيقة.. لا شيء يسير في هذا العالم كما هو مخطط له.. كلما عشت أكثر أدركت أن هذا العالم عالم فائن وليس له قيمة، حيث لا يوجد فيه سوى الألم والمعاناة والخيبة.. بما أننا نعيش في عالم فيه الضوء والنور، سيكون هناك وجود للظلال دائماً.. ما دام مفهوم المنتصر موجوداً، سيظل المقهور والمهزوم موجوداً أيضاً."
+
+✓ 47 — مونكي دي لوفي
+
+لوفي: ومن أنتِ أيتها الفتاة؟
+نامي: اسمي نامي، أسترد ما يسرقه القراصنة.. هل تنضم إلي؟ فأنت قوي جداً!
+لوفي: لا أريد، فأنا أُفضل أن أعمل وحدي.
+لوفي: هل تنضمين إلى الفريق الذي ننوي تشكيله أنا وزورو؟
+نامي: حقاً ما تقول؟!
+لوفي: نعم، سنكون فريق قراصنة رائع!
+نامي: هل أنت قرصان أيضاً؟
+لوفي: نعم! نعم، أنا كذلك.. لقد وعدت صاحب هذه القبعة أن أجمع فريق قراصنة وأصير زعيمهم!
+
+∆ 48 — مجهول
+
+كم يبدو هذا العالم تعيساً
+لكن يمكنني أن أرى..
+مستقبلاً مشرقاً لهذا العالم
+دون تدخل تلك الحشرات التي تسمى بشراً
+فقط القليل ومن ثم يتحقق هدفي
+أيها البشر
+انتظروا وقت عقابكم
+
+♕ 49 — عهد الأصدقاء
+
+هل تعرف ماذا كانت تقول لي أختي بيانكا يا روميو؟
+ماذا؟
+كانت تقول..
+لن تعيش هذا اليوم ثانيةً
+لا تدعه يمر بحزن
+كن سعيداً وستغير كل شيء حولك
+كن سعيداً وستغير كل شيء حولك؟
+
+♡ 50 — أوبيتو أوتشيها
+
+إذاً لا أمانع باستخدام اسمي السابق "توبي"
+فالآن بعد أن بدأت الحرب لم تعد الأسماء مهمة
+"مادارا"
+"توبي"
+نادوني بما تشاؤون
+ومن تكون بالضبط بحق السماء؟
+أنا لا أحد!
+ولا أريد أن أكون أحداً
+كل ما أريده هو نجاح مشروع عين القمر
+البقاء في هذا العالم الذي لا يعرف غير اليأس.. بلا قيمة!
+
+✓ 51 — أوبيتو أوتشيها
+
+رغم أنك كنت معلمي
+إلى أنك لم تتعرف علي
+لكنها طبيعة شخصيتك
+من الأساس
+كم هذا بائس
+مثلك هو كاغي بطل!
+لكنّك الآن ذليل أمام ابنك
+هذا صحيح!
+"الهوكاغي"
+هو منصب بائس مقارنة بما وصلت إليه!
+
+∆ 52 — العم فيتالس
+
+كلنا سنموت
+لا أحداً سينجو
+لكن الموت لا يعني أننا سنفترق
+روسينا...
+لقد أحببتها أكثر من نفسي
+وبعد أن مرضت وماتت
+ظننت أنني سأفارقها إلى الأبد
+لكنها.. ما تزال حية
+في قلبي يا ريمي
+وأنا أيضاً سأحيى في قلبك بعد أن أموت
+إياك أن تضعفي يا ريمي
+فهذه الحياة صعبة جداً
+ولكننا.. يجب أن نؤدي رسالتنا
+
+♕ 53 — أوبيتو أوتشيها
+
+الشيء الوحيد الذي ينتظرك
+هو أسوأ كوابيسك الشخصية
+والذي تعرفه جيداً
+العزلة!
+لماذا تتابع العيش مع هذه الحقيقة؟
+هيا انضم إلينا حالا ناروتو
+
+♡ 54 — جيرايا
+
+اسمعني جيداً
+هناك جزء مهم يجب أن تفهمه
+قلت لك بأنني سأكون معلمك
+وليس والدك أو صديقك
+عليك أن تفعل هذا بنفسك أو لن تفعله
+توقف عن كونك طفلاً صغيراً
+وتعلم الوقوف كالشينوبي
+
+✓ 55 — إيتاتشي أوتشيها
+
+لماذا أنت متعلق بأخي هكذا؟
+إنه مجرد نينجا هارب
+إن سبب تعبغي الشديد بساسكي
+أنني أعتبره أخاً أكثر مما تعتبره أنت
+قلت إنك تعتبر ساسكي أخاً لك
+لذلك شعرت أنك أنت ناروتو
+الشخص الوحيد القادر على إيقافه
+إيتاشي..
+شكراً على ثقتك بي
+ولا داعي لتقلق بعد الآن
+لقد فعلت أكثر مما يلزم لحماية قرية الورق
+لذلك دعني أتولى الباقي عنك
+إن أخي الصغير..
+محظوظ بوجود صديق مثلك
+"ناروتو أوزوماكي"
+
+∆ 56 — إيتاتشي أوتشيها
+
+ربما تكرهني..
+ولكن نحن إخوان..
+وليس لنا غير بعضنا
+سأتواجد دائماً من أجلك
+وحتى لو أصبحت تكرهني
+فهذا واجب الأخ الكبير
+
+♕ 57 — زورو
+
+في كل مرة أنظر فيها إلى الماضي
+أتيقن أنني كنت محارباً قوياً
+إنتصرت على نفسي كثيراً
+في أمور كنت أظن أن بنهايتها ينتهي الكون
+ولكن..
+ها أنا هنا، أبدأُ من جديد كل يوم!
+
+♡ 58 — العم فيتالس
+
+الحب يبدأ عندما ينتهي الحماس
+لهفة البدايات ليست حب
+فالإنسان لا يحب في أسبوع أو شهر
+لا يمكنك أن تقول إنك تحب البحر وأنت تقف على الشاطئ
+لهذا يجب أن تخوض في أعماقه
+وتضربك أمواجه
+تشرب من مياهه المالحة
+تجرح قدمك بصخرة
+فتلمس عيوبه
+وترى ظلماته
+وتعرف كيف يغضب
+وبعدها فقط إما أن تحبه كله.. أو تكرهه كله
+
+✓ 59 — زورو وميهوك
+
+لم أرى سيفاً يستطيع فعل ما فعله سيفك أبداً
+لا يستطيع أي سيف فعل أي شيء وحده
+وهل قطعت هذه السفينة بهذا السيف أيضاً؟
+بالتأكيد!
+كما توقعت!
+أنت الأقوى
+لقد جبت البحار كلها بحثاً عنك
+وما هدفك؟
+أن أهزمك!
+أحمق!!
+إنني أدعوك إلى النزال يا ميهوك!
+
+∆ 60 — ناروتو
+
+لا يهمني أبداً إن كان شيطاناً أو مجنوناً
+فبداخلي شيطان حقيقي
+شيطان ماذا بداخلك؟
+منذ أن ولدت وأنا لم أعيش حياة سعيدة
+كما يتمنى كل الناس
+ولكي يتأكد والدي أنني أصبحت أقوى شينوبي
+قام بإلقاء النينجيتسو خاصته علي
+وغرس روح الرمل في نفسي التي لم تولد بعد
+ودمرت حياة المرأة التي أنجبتني
+ولدت وحشاً بروح رملية
+
+♕ 61 — أكازا
+
+روحه القتالية مدهشة!
+رغم أنك مثخن بأنواع الجراح
+إلا أنك لم تفقد شيئاً
+من عزمك وثباتك الروحي
+عليك حقاً أن تصبح شيطاناً
+يا كيوجيرو!
+وحينها فلنتقاتل إلى الأبد
+أشعل قلبك..
+تخطى حدودك!
+أنا هاشيرا اللهب!
+"رينغوكو كيوجيرو"
+
+♡ 62 — زورو
+
+اسمع..
+أنت حصاد نفسك
+حصاد الكتب التي تقرؤها
+وحصاد الصحبة التي تختارها
+وحصاد الصوت الذي تسمعه
+وحصاد الخطوة التي تسير بها
+وحصاد اليوم الذي تعيشه
+وحصاد البيئة التي تشكلها
+أنت الذي تختار مأواك
+فإما أن تكون في القاع
+أو في السماء
+
+✓ 63 — زورو
+
+في مرحلة من العمر
+ستمر بشيء يسمى
+الوعي بالذات
+لن ترحب عندها
+بمن ينتقص من قدرك
+ولن تتحمل من يستغلك
+ولن تجامل أحداً
+وستبتعد فوراً
+عندما تشعر بالضيق
+أنت من ستدير العلاقات
+وأنت من سيختار من يستمر
+فما عاد هناك مجال لأشخاص خاطئين
+ولن تسمح بأن يؤذيك أحد بكلمة
+فزمن التحمل.. قد ولّى
+
+∆ 64 — زابوزا وهاكو
+
+لطالما بقيت بجانبي
+أقل ما أفعله
+هو أن أكون بجانبك في النهاية
+أعرف أنه لا يمكن
+لكن أتمنى أن أذهب حيثما تذهب
+كم أتمنى أن أرافقك
+
+♕ 65 — زورو
+
+ليس عيباً!
+أن تلبس ملابس تحبها أكثر من مرة
+وليس عيباً!
+أن تعود إلى البيت
+لأن عائلتك ورغم كبر سنك تخاف عليك
+وليس عيباً!
+أن تعمل أي عمل في سبيل
+أن تكون سنداً لعائلتك ولنفسك
+وليس عيباً!
+أن تكون أنت كما أنت
+بل العيب..
+النظرة التي تقيم الإنسان
+بمظهره وممتلكاته
+لا بقيمه وأخلاقه!
+
+♡ 66 — العم فيتالس
+
+الأشياء التي تأتي من طرف واحد
+دائماً ما تكون مؤلمة
+مثل كونك تنتظر والآخر نائم
+تقلق والآخر يضحك
+تكتب والآخر لا يقرأ
+وتتعب والآخر لا يبالي
+
+✓ 67 — ساسكي
+
+أنا أفهم الآن "ناروتو"
+لا بد أنك كنت وحيداً
+وعانيت الكثير من الألم
+سامحني ناروتو
+لو كنت جديراً بثقتي أكثر
+لما اضطررت لتحمل هذا
+لقد عرفت، أنك كنت وحيداً دائماً
+وحين راقبتك
+شعرت بالاطمئنان لأنني لم أكن الوحيد
+كنا لا نزال مجرد طفلين
+وأذكر وقتها..
+أنني حملت قدر "الكيوبي"
+وأنت قدر "الأوتشيها"
+
+∆ 68 — أوروتشيمارو
+
+لا مغزى من النحيب والحزن..
+على الذين فقدوا حياتهم.
+إن كان هناك أي معنى وراء الموت
+فيجب علينا الاستفادة منه.
+إذاً وما المعنى من الحياة؟!
+لا يوجد معنى
+سيكون هناك معنى للحياة
+فقط إن كانت خالدة.
+
+♕ 69 — العم فيتالس
+
+لا تتعلق بأحد كثيراً
+فمهما كانت علاقتك به قويه
+قد يأتي يوم، ويجد بديلاً عنك
+ويقل السؤال والاهتمام بك.
+وعند سؤالك له،
+إما أن يعتذر لك بالظروف..
+أو يذكرك بذلاتك ويضع اللوم عليك
+وربما لا يهتم
+لذا عش على مبدأ: وجودهم لطيف
+وغيابهم لا يضر!
+
+♡ 70 — ناروتو
+
+اسمع ساسكي
+انت تذكر صحيح؟
+فقط كانت القريه، تكرهني بكل من فيها
+والسبب هو..
+ان كيوبي ذا الذيل التسعة بداخلي
+وانا أيضاً كرهت القريه..
+حتى انني فكرت بالإنتقام من الجميع
+
+* انظري، انظري إلى ذلك الطفل!
+  لماذا يدعو طفلاً مثله يبقى في القريه
+  آمل ان يراعي السيد الهوكاجي مشاعرنا
+  اصتوا!!
+  والآن أيضاً..
+  لماذا اخبرني!!
+  لماذا الجميع وحتى انت؟
+  انت يامعلمي..
+  لماذا جميعكم تنظرون الي بهذه نظره.
+  انا لست مصدر ازعاج ولست حجرها!
+  انا انسان
+  انا اسمي ناروتو اوزوماكي!
+
+♕ 71 — زورو
+
+ابقى بعيداً عن الناس الذين
+يحاولون أن يستهينوا بطموحاتك
+فالصغار يفعلون ذلك دائماً
+لكن العظيم فعلاً
+يجعلك تشعر أنك أيضاً
+يمكن أن تصبح عظيماً
+
+♡ 72 — زورو
+
+أكثر شيء يجعلني فخور بنفسي..
+أنني لم أبني علاقتي مع الآخرين على أساس المصالح
+ولم أستغل أحد
+ولهذا السبب أغلب الوقت تجدني لوحدي
+لأنني لا أعرف المجاملة
+وإذا أحببت، أحببت بصدق
+وإذا أعطيت
+أعطي ولا أنتظر الرد من أحد
+وإذا صادقت شخصاً كنت له كل شيء
+وإذا أخطأت، أعتذر
+هذا هو أنا!
+
+✓ 73 — سانجي
+
+لا تثقوا كثيراً
+ولا تحبوا كثيراً
+ولا تتأملوا كثيراً
+لأن كثيراً
+ستؤلمكم كثيراً
+غرباء
+ثم أصدقاء
+ثم أحاديث طويلة
+ثم أحبة
+ثم أحاديث قليلة
+ثم عادوا غرباء!
+
+∆ 74 — لوفي
+
+عندما أغضب لا أستطيع أن أنام
+وعندما أحزن
+لا أكف عن التفكير بالسبب الذي أحزنني
+لا يمكنني أن أتحكم في نفسي!
+
+♕ 75 — زورو
+
+الحياة مستمرة!
+سواء ضحكت أم بكيت
+فلا تحمل نفسك هموماً
+لن تستفيد منها
+وحين تصطدم بالصعاب، ابتسم
+وتذكر أن كل عقبة هي فرصة للنمو
+وكلما تعظمت التحديات في حياتك
+تذكر أن النجوم تشرق في الظلام
+وأن لكل عاصفة نهاية
+تكشف بعدها عن قوس قزح
+
+♡ 76 — مجهول
+
+يا قلبُ لا تبكي عليها إنها..
+تهوى الفراقَ وبالشاعرِ تلعبُ
+يا قلبُ لا ترضى علينا ذلةً
+إني عزيزٌ شامخٌ لا أُغلب!
+
+✓ 77 — لوفي وسانجي
+
+لوفي: هي أنت أيها الطباخ!
+لوفي: أنا وفريقي أربعة أشخاص وينقصنا طباخ
+لوفي: ما رأيك أن تنضم إلى فريقنا؟
+سانجي: هل أنتم أربعة فقط؟
+لوفي: نعم!
+سانجي: وكيف تجرأت على مهاجمة مطعمنا وليس معك رجال كثيرون؟
+لوفي: لم نقصد ضربه إلا أن القذيفة سقطت خطأً
+سانجي: بدأ المعلم يبحث عن أشخاص ليسوا قراصنة في الأصل، ليعملوا لديه
+لوفي: اها، الآن فهمت..
+لوفي: ما رأيك بالانضمام إلى فريقي؟
+سانجي: أنا أرفض ذلك
+
+∆ 78 — لوفي
+
+أنا أيضاً سأذهب إلى الحد الكبير
+روجر الذهبي كان رائعةً
+وعلى القراصنة أن يقتدوا به كما قلت
+لذا خرجت إلى البحر لأتوجه إلى الحد الكبير
+وأجد القطعة النادرة
+سأصير زعيم القراصنة!
+
+♕ 79 — زورو
+
+لا تحاولوا!
+أساليبكم هذه صارت قديمة جداً
+مررت بكثير من المواقف المحرجة
+واجهت الخطر
+ولكني تغلبت عليه
+فكرة الانسحاب لم تخطر على بالي لحظة
+لا بأس بمزيد من المغامرات!
+ألا تعرفون من أنا؟
+أنا " زورو "
+ألا تزالون مصرين على مواجهتي؟
+هذه الألقاب لا معنى لها في ساحة المعركة
+الفوز للأقوى!
+
+♡ 80 — سانجي ولوفي
+
+سانجي: أهلاً يا لوفي
+سانجي: متمسك بحلمي حتى لو كان سخيفاً
+سانجي: سأذهب من أجل هدفي وهو العثور على البحر الأزرق الصافي
+لوفي: سانجي!
+سانجي: أجل كما أردت.. سأصحبك بالطريق لتصير زعيم القراصنة
+
+`;
+
+</script>
+<!-- ===== محرك المقولات (لا تلمسه) ===== -->
+<script>
+/* ===== محرك المقولات: بحث بالرقم + ترتيب + خط + "من إنتاج" + صوت النسخ =====
+   لا تحتاج تعدله. العبارات نفسها بملف quotes.js */
+(function(){
+ try{
+ var A=window.SITE;if(!A)return;
+ var $=A.$,S=A.S,CREDIT='♚ 𝒜 ℬ 𝒟 𝒰 ℒ ℒ 𝒜 ℋ ♚';
+
+ var lk=document.createElement('link');lk.rel='stylesheet';
+ lk.href='https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap';
+ document.head.appendChild(lk);
+
+ A.css(`
+#qg{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));align-items:start}
+.qbar{display:flex;gap:10px;margin:0 0 12px}
+.qbar input{flex:1;min-width:0;min-height:48px;padding:0 16px;background:rgba(14,8,9,.9);border:1px solid var(--ln);color:var(--tx);font:500 16px Tajawal,sans-serif;outline:0;transition:border-color .3s,box-shadow .3s}
+.qbar input:focus{border-color:var(--rd2);box-shadow:0 0 18px rgba(255,59,71,.25)}
+.qbar input::placeholder{color:var(--mut)}
+.qinfo{color:var(--mut);font-size:.9rem;margin:0 0 18px}
+.qx{position:relative;content-visibility:auto;contain-intrinsic-size:auto 260px;padding:20px 22px 16px;border:1px solid var(--ln);background:rgba(14,8,9,.9);outline:1px solid rgba(208,18,31,.16);outline-offset:-7px;transition:border-color .4s,transform .5s var(--out);animation:qin .6s var(--out) both}
+.qx[hidden]{display:none}
+.qx:hover{border-color:var(--rd2);transform:translateY(-4px)}
+.qh{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--ln)}
+.qn{flex:none;min-width:46px;padding:2px 10px;text-align:center;font:800 1.15rem/1.6 Cinzel,serif;color:#fff;background:linear-gradient(180deg,var(--rd),var(--dk));border:1px solid var(--rd2);box-shadow:0 0 14px rgba(255,59,71,.35)}
+.qw{font:700 1.3rem/1.6 'Aref Ruqaa','Reem Kufi',serif;color:var(--sv)}
+.qx blockquote{font:700 1.4rem/2.1 Amiri,'Reem Kufi',serif;color:var(--tx);margin-bottom:14px}
+.qx blockquote .sp{font-family:'Aref Ruqaa',Amiri,serif;color:var(--rd2)}
+.qx blockquote .gap{height:.6em}
+.qf{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding-top:12px;border-top:1px solid var(--ln)}
+.cr{color:var(--mut);font:500 .9rem Tajawal,sans-serif}
+.cr .lt{display:inline-block;margin-inline-start:6px;font:600 .95rem Cinzel,serif;letter-spacing:.08em;background:linear-gradient(90deg,#8d8484,#fff 40%,var(--rd2) 70%,#8d8484);-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes qin{from{opacity:0;transform:translateY(14px)}}
+ `);
+
+ function norm(s){return String(s).replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[٠-٩]/g,function(d){return d.charCodeAt(0)-1632}).toLowerCase()}
+ function pad(n){return n<10?'0'+n:''+n}
+
+ function parse(t){
+  var out=[],cur=null,re=/^\s*\S{1,2}\s*(\d{1,4})\s*[—–\-]\s*(.+?)\s*$/;
+  t.split(/\r?\n/).forEach(function(l){
+   var m=re.exec(l);
+   if(m){cur={n:+m[1],c:m[2],L:[]};out.push(cur);return}
+   if(cur)cur.L.push(l.replace(/^\s*\*\s+/,'').trim());
+  });
+  out.forEach(function(q){
+   var s=q.L.join('\n').replace(/\n{3,}/g,'\n\n').trim();
+   s=s.replace(/^"\s*([\s\S]*?)\s*"$/,'$1');
+   q.t=s;
+  });
+  return out.filter(function(q){return q.t}).sort(function(a,b){return a.n-b.n});
+ }
+
+ function chime(){
+  if(!S.on)return;
+  S.tone(659,'sine',.5,.12,0,0);S.tone(880,'sine',.5,.12,0,.09);
+  S.tone(1318,'sine',.9,.1,0,.18);S.tone(1760,'triangle',.8,.035,0,.2);
+ }
+
+ function run(){
+  var raw=window.QUOTES_TEXT,box=$('#qg');
+  if(!raw||!box)return;
+  var list=parse(raw);if(!list.length)return;
+  box.innerHTML='';
+
+  var bar=document.createElement('div');bar.className='qbar';
+  bar.innerHTML='<input type="search" inputmode="search" enterkeyhint="search" autocomplete="off" placeholder="ابحث برقم العبارة أو اسم الشخصية…" aria-label="بحث في العبارات"><button class="cp" type="button">مسح</button>';
+  var inp=$('input',bar),clr=$('button',bar);
+  var info=document.createElement('p');info.className='qinfo';
+  box.parentNode.insertBefore(bar,box);box.parentNode.insertBefore(info,box);
+
+  var cards=list.map(function(q){
+   var c=document.createElement('article');c.className='qx';
+   var h=document.createElement('div');h.className='qh';
+   var n=document.createElement('span');n.className='qn';n.textContent=pad(q.n);
+   var w=document.createElement('span');w.className='qw';w.textContent=q.c;
+   h.append(n,w);
+   var b=document.createElement('blockquote');
+   q.t.split('\n').forEach(function(l){
+    var d=document.createElement('div');
+    if(!l.trim())d.className='gap';
+    else{
+     var m=/^([^:：\n]{1,16}?)\s*[:：]\s*(.+)$/.exec(l);
+     if(m){var sp=document.createElement('span');sp.className='sp';sp.textContent=m[1]+':';d.append(sp,document.createTextNode(' '+m[2]))}
+     else d.textContent=l;
+    }
+    b.append(d);
+   });
+   var f=document.createElement('div');f.className='qf';
+   var cr=document.createElement('div');cr.className='cr';cr.append('من إنتاج ');
+   var nm=document.createElement('span');nm.className='lt';nm.textContent=CREDIT;cr.append(nm);
+   var bt=document.createElement('button');bt.className='cp';bt.type='button';bt.textContent='نسخ';
+   bt.onclick=function(){
+    A.copy(q.t).then(function(){
+     chime();A.toast('تم نسخ العبارة رقم '+pad(q.n)+' ✓');
+     bt.classList.add('ok');bt.textContent='تم ✓';
+     setTimeout(function(){bt.classList.remove('ok');bt.textContent='نسخ'},1600);
+    }).catch(function(){A.toast('تعذّر النسخ، حاول مرة أخرى',1)});
+   };
+   f.append(cr,bt);c.append(h,b,f);box.append(c);
+   return {el:c,q:q,s:norm(q.c+' '+q.t)};
+  });
+
+  function apply(){
+   var nv=norm(inp.value.trim().replace(/^[#№]\s*/,'')),isNum=/^\d+$/.test(nv),shown=0;
+   cards.forEach(function(o){
+    var ok=!nv||(isNum?o.q.n===+nv:o.s.indexOf(nv)>-1);
+    o.el.hidden=!ok;if(ok)shown++;
+   });
+   info.textContent=!nv?'إجمالي العبارات: '+list.length:(shown?'النتائج: '+shown:'ما لقيت شي، جرب رقماً أو كلمة ثانية');
+  }
+  inp.addEventListener('input',apply);
+  clr.onclick=function(){inp.
