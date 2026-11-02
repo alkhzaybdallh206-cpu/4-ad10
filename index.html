@@ -238,38 +238,8 @@ window.SITE={CFG:CFG,$:$,$$:$$,S:S,go:go,toast:toast,copy:copy,sleep:sleep,css:c
 })();
 </script>
 
-<!-- ===== ✎ منطقة التحديثات: أضف أفكارك هنا فقط ===== -->
-<!-- سكربت منفصل: أي خطأ فيه ما يخرب الموقع -->
+<!-- ===== ملف العبارات: لإضافة عبارة جديدة انزل لآخر هذا الجزء واكتب فوق سطر `; ===== -->
 <script>
-(function(){
- if(!window.SITE)return;
- /* كل تحديث داخل add: لو فيه خطأ يتجاهل نفسه فقط */
- function add(name,fn){try{fn(SITE)}catch(e){console.warn('تحديث تعطّل: '+name,e)}}
-
- /* ── أمثلة: انسخ المثال لتحت السطر الأخير واحذف ما لا تريده ──
- add('مقولة جديدة',function(A){
-  A.addQuote({q:'نص المقولة',c:'الشخصية',a:'الأنمي'});
- });
- add('صديق جديد',function(A){
-  A.addFriend({name:'الاسم',handle:'@المعرف',platform:'TikTok',url:'https://...'});
- });
- add('حساب جديد',function(A){
-  A.addSocial({name:'Discord',id:'@4_ad10',url:'https://...',tag:'مجتمع',b:'سيرفري.',svg:''});
- });
- add('تنسيق جديد',function(A){
-  A.css('.soc h3{color:#ff3b47}');
- });
- add('صفحة جديدة',function(A){
-  A.addPage('works','أعمالي','<h2 class="t">أعمالي</h2>');
- });
- */
-
- /* ↓↓↓ اكتب تحديثاتك الجديدة تحت هذا السطر ↓↓↓ */
-
-
-})();
-</script>
- add('العبارات والبحث',function(A){
 /* ===== ملف العبارات =====
    لإضافة عبارة جديدة: انزل لآخر الملف، واكتب فوق سطر `; بنفس الصيغة:
    ♕ 81 — اسم الشخصية
@@ -935,6 +905,9 @@ window.QUOTES_TEXT=`
 
 `;
 
+</script>
+<!-- ===== محرك المقولات (لا تلمسه) ===== -->
+<script>
 /* ===== محرك المقولات: بحث بالرقم + ترتيب + خط + "من إنتاج" + صوت النسخ =====
    لا تحتاج تعدله. العبارات نفسها بملف quotes.js */
 (function(){
@@ -1052,8 +1025,39 @@ window.QUOTES_TEXT=`
  if(document.readyState==='complete')run();else addEventListener('load',run);
  }catch(e){console.warn('المقولات: ',e)}
 })();
-});
+
+</script>
+
+<!-- ===== ✎ منطقة التحديثات: أضف أفكارك هنا فقط ===== -->
+<!-- سكربت منفصل: أي خطأ فيه ما يخرب الموقع -->
+<script>
+(function(){
+ if(!window.SITE)return;
+ /* كل تحديث داخل add: لو فيه خطأ يتجاهل نفسه فقط */
+ function add(name,fn){try{fn(SITE)}catch(e){console.warn('تحديث تعطّل: '+name,e)}}
+
+ /* ── أمثلة: انسخ المثال لتحت السطر الأخير واحذف ما لا تريده ──
+ add('مقولة جديدة',function(A){
+  A.addQuote({q:'نص المقولة',c:'الشخصية',a:'الأنمي'});
+ });
+ add('صديق جديد',function(A){
+  A.addFriend({name:'الاسم',handle:'@المعرف',platform:'TikTok',url:'https://...'});
+ });
+ add('حساب جديد',function(A){
+  A.addSocial({name:'Discord',id:'@4_ad10',url:'https://...',tag:'مجتمع',b:'سيرفري.',svg:''});
+ });
+ add('تنسيق جديد',function(A){
+  A.css('.soc h3{color:#ff3b47}');
+ });
+ add('صفحة جديدة',function(A){
+  A.addPage('works','أعمالي','<h2 class="t">أعمالي</h2>');
+ });
+ */
+
+ /* ↓↓↓ اكتب تحديثاتك الجديدة تحت هذا السطر ↓↓↓ */
+
+
 })();
-</script> 
+</script>
 </body>
 </html>
