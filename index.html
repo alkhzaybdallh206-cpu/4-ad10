@@ -825,5 +825,48 @@ SITE.quotes(`
 سانجي: أجل كما أردت.. سأصحبك بالطريق لتصير زعيم القراصنة
 `);
 </script>
+ <!-- ===== تحديث 3: الأصوات + إيقاف المرشد ===== -->
+<script>
+SITE.update({
+css:`
+[hidden]{display:none!important}
+.tg{position:absolute;top:calc(env(safe-area-inset-top,0px) + 10px);min-height:34px;padding:0 10px;border:1px solid var(--o);background:rgba(122,18,8,.55);font:700 .78rem 'Reem Kufi',sans-serif;white-space:nowrap}
+.tg.tl{left:10px}.tg.tr{right:10px}
+.tg.off{opacity:.5;text-decoration:line-through}
+.plain{position:fixed;z-index:500;left:50%;transform:translateX(-50%);bottom:calc(8px + env(safe-area-inset-bottom,0px));width:min(680px,calc(100% - 20px));border:1px solid var(--o);background:rgba(10,3,1,.94);box-shadow:0 0 30px rgba(255,138,31,.2);padding:10px 10px 6px}
+.plain .row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.plain .chip.on{background:var(--r)}
+.noguide .scene{padding-bottom:calc(170px + env(safe-area-inset-bottom,0px))}
+`,
+run:function(S){
+var $=function(s){return document.querySelector(s)};
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function ld(k,d){try{var v=localStorage.getItem(k);return v===null?d:v==='1'}catch(e){return d}}
+function sv(k,v){try{localStorage.setItem(k,v?'1':'0')}catch(e){}}
+var snd=ld('snd',true),gd=ld('gd',true),ac=null,mg=null,nb=null;
+function init(){if(ac)return;var C=window.AudioContext||window.webkitAudioContext;if(!C)return;ac=new C();mg=ac.createGain();mg.gain.value=.6;mg.connect(ac.destination);var n=ac.sampleRate;nb=ac.createBuffer(1,n,n);var d=nb.getChannelData(0);for(var i=0;i<n;i++)d[i]=Math.random()*2-1}
+function tone(f,ty,d,v,to,dl){if(!snd||!ac)return;var t=ac.currentTime+(dl||0),o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.setValueAtTime(f,t);if(to)o.frequency.exponentialRampToValueAtTime(to,t+d);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(mg);o.start(t);o.stop(t+d+.05)}
+function noise(d,f1,f2,v){if(!snd||!ac)return;var t=ac.currentTime,s=ac.createBufferSource(),b=ac.createBiquadFilter(),g=ac.createGain();s.buffer=nb;b.type='bandpass';b.Q.value=1.2;b.frequency.setValueAtTime(f1,t);b.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+d*.5);g.gain.exponentialRampToValueAtTime(.0001,t+d);s.connect(b);b.connect(g);g.connect(mg);s.start(t);s.stop(t+d+.05)}
+var SFX=S.sfx={
+ tap:function(){tone(820,'sine',.09,.08,430)},
+ whoosh:function(){noise(1,200,4200,.28);tone(80,'sawtooth',.9,.08,380);tone(55,'sine',1,.25,30,.4)},
+ chime:function(){[784,988,1318,1568].forEach(function(f,i){tone(f,'sine',.55,.09,0,i*.07)});noise(.3,3000,9000,.04)},
+ blip:function(){tone(1500+Math.random()*300,'square',.03,.012)}};
+document.addEventListener('click',function(e){init();if(ac&&ac.state==='suspended')ac.resume();var b=e.target.closest('button,a');if(!b||b.classList.contains('tg'))return;if(b.classList.contains('cp')&&b.textContent.trim()==='نسخ')setTimeout(SFX.chime,60);else SFX.tap()},true);
+var curId='welcome',lw=0,lb=0;
+function mark(){[].forEach.call(document.querySelectorAll('.plain .chip'),function(b){b.classList.toggle('on',b.dataset.id===curId)})}
+new MutationObserver(function(ms){ms.forEach(function(m){var t=m.target;if(t.classList&&t.classList.contains('scene')&&t.classList.contains('on')&&(m.oldValue||'').split(' ').indexOf('on')<0){curId=t.id;mark();if(Date.now()-lw>400){lw=Date.now();SFX.whoosh()}}})}).observe($('#stage'),{attributes:true,attributeFilter:['class'],subtree:true,attributeOldValue:true});
+new MutationObserver(function(){if(Date.now()-lb>55){lb=Date.now();SFX.blip()}}).observe($('#say'),{childList:true,characterData:true,subtree:true});
+var bs=el('button','tg tl','♪ الصوت'),bg=el('button','tg tr','✦ المرشد'),PL=el('div','plain'),row=el('div','row');
+bs.title='تشغيل أو إيقاف الصوت';bg.title='تشغيل أو إيقاف المرشد';
+[['الرئيسية','welcome'],['حساباتي','accounts'],['المقولات','quotes'],['الأصدقاء','friends']].forEach(function(p){var b=el('button','chip',p[0]);b.dataset.id=p[1];b.onclick=function(e){S.go(p[1],e)};row.append(b)});
+var rt=$('.rt').cloneNode(true),y=rt.querySelector('#yr');if(y)y.removeAttribute('id');PL.append(row,rt);document.body.appendChild(PL);
+$('.bar').append(bs,bg);
+function apply(){bs.classList.toggle('off',!snd);bg.classList.toggle('off',!gd);$('.guide').hidden=!gd;PL.hidden=gd;document.body.classList.toggle('noguide',!gd);mark()}
+bs.onclick=function(){snd=!snd;sv('snd',snd);apply();if(snd){init();SFX.tap()}};
+bg.onclick=function(){gd=!gd;sv('gd',gd);apply();SFX.tap()};
+apply();
+}});
+               </script>
 </body>
 </html>
